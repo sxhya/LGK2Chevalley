@@ -1,0 +1,93 @@
+\documentclass[12pt]{amsart}
+\usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, nameref, thmtools, hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
+\usepackage[activate={true,nocompatibility}]{microtype}
+\usepackage[capitalize]{cleveref}
+            
+\newlist{thmlist}{enumerate}{1} \setlist[thmlist]{label=(\roman{thmlisti}), ref=\thethm.(\roman{thmlisti}),noitemsep} \Crefname{thmlisti}{Theorem}{Theorems}
+\newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label=(\roman{lemlisti}), ref=\thelemma.(\roman{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
+
+\theoremstyle{plain} \declaretheorem[name=Theorem, Refname={Theorem,Theorems}]{thm} \Crefname{thm}{Theorem}{Theorems}
+\numberwithin{equation}{section}
+
+\newtheorem{lemma}{Lemma} \numberwithin{lemma}{section} \Crefname{lemma}{Lemma}{Lemmas}
+\newtheorem{cor}[lemma]{Corollary} \Crefname{cor}{Corollary}{Corollaries}
+\newtheorem{prop}[lemma]{Proposition} \Crefname{prop}{Proposition}{Propositions}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{lemma*}{Lemma}
+\theoremstyle{definition} \newtheorem{dfn}[lemma]{Definition} \Crefname{dfn}{Definition}{Definitions}
+\newtheorem{example}[lemma]{Example} \Crefname{example}{Example}{Examples}
+\theoremstyle{remark} \newtheorem{rem}[lemma]{Remark} \Crefname{rem}{Remark}{Remarks}
+
+%Page layout
+\textwidth 16cm 
+\textheight 22cm 
+\headheight 0.5cm 
+\evensidemargin 0.3cm 
+\oddsidemargin 0.2cm
+
+%Theorem counters
+\numberwithin{equation}{section}
+\newcounter{thmcounter} 
+\newcounter{lemmacounter}
+\newtheorem{thm}[thmcounter]{Theorem}
+\newtheorem{prop}[thmcounter]{Proposition}
+\newtheorem{cor}[thmcounter]{Corollary}
+\newtheorem{lemma}[lemmacounter]{Lemma}
+\theoremstyle{definition}
+\newtheorem{rem}[equation]{Remark}
+\newtheorem{example}[equation]{Example}
+\newtheorem{dfn}[equation]{Definition}
+\newtheorem{notation}[equation]{Notation}
+
+\newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Cent}{\operatorname{Cent}}
+\newcommand{\Img}{\operatorname{Im}}
+\newcommand{\Coker}{\operatorname{Coker}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\K}{\operatorname{\mathrm{K}}}
+\newcommand{\GG}{\operatorname{\mathrm{G}}}
+\newcommand{\St}{\operatorname{\mathrm{St}}}
+\newcommand{\StU}{\operatorname{\hat{\mathrm{U}}}}
+\newcommand{\G}{\operatorname{\mathrm{G}}}
+\newcommand{\E}{\operatorname{\mathrm{E}}}
+\newcommand{\M}{\operatorname{\mathrm{M}}}
+\newcommand{\sr}{\operatorname{\mathrm{sr}}}
+\newcommand{\Um}{\operatorname{\mathrm{Um}}}
+\newcommand{\rk}{\operatorname{\mathrm{rk}}}
+\newcommand{\rA}{\mathsf{A}}
+\newcommand{\rB}{\mathsf{B}}
+\newcommand{\rC}{\mathsf{C}} 
+\newcommand{\rD}{\mathsf{D}} 
+\newcommand{\rE}{\mathsf{E}}
+\newcommand{\HH}{\mathrm{H}}
+\newcommand{\eval}[4]{ev \textstyle \left[\frac{#2[#1] \rightarrow #3}{#1 \mapsto #4}\right]}
+\newcommand{\ev}[3]{\eval{t}{#1}{#2}{#3}}
+
+\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|}\right|_{#2}}}
+\newcommand*\MapsTo{\xrightarrow[\raisebox{0.25 em}{\smash{\ensuremath{\sim}}}]{}}  
+
+\title{Local-global principle for $\K_2$ of Chevalley groups}
+\keywords {Chevalley groups, Steinberg groups, $K_2$-functor. {\em Mathematical Subject Classification (2010):} 19C09; 20G35}
+\author {Andrei Lavrenov, Sergey Sinchuk}
+\email {avlavrenov{\it at}gmail.com, sinchukss {\it at} gmail.com}
+\date {\today}
+
+\begin{document}
+
+\begin{abstract} To be written. \end{abstract}
+
+\maketitle
+
+\section {Introduction}\label{intro}
+ 
+\subsection{Acknowledgements}
+The authors of the present paper acknowledges financial support from Russian Science Foundation grant 14-11-00297.
+
+\section {Preliminaries}\label{prelim}
+
+\printbibliography
+
+\end{document}
