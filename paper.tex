@@ -105,7 +105,7 @@ First of all, we will need to give yet another definition of the relative linear
  \end{enumerate}
  \end{itemize}
 \end{dfn}
-It is easy to check correctness of the above definition.
+It is easy to check the correctness of the above definition.
 
 \begin{lemma}
  The groups $\St^*(n, R, I)$ and $\St(n, R, I)$ are isomorphic.
@@ -114,13 +114,29 @@ It is easy to check correctness of the above definition.
  TODO: 
 \end{proof}
 
-The next step is construct 
+The next step of the proof is to is construct certain elements in $\St(n, R)$ which are similar to Tulenbaev's elements $X_{u,v}(a)$ see~\cite[\S~1]{T}.
 
 
-\begin{dfn}
- Let $u$,$v$ be elements of $B^n$ such that $v^Tu = 0$ and there exists $w \in B^n$ such that $<w,u> = a^N$.
- In this context we define elements $Z^1(u,v)$ and 
-\end{dfn}
+
+Assume that $n \geq 4$. For the rest of this section $a$ denotes a nonnilpotent element of $R$.
+\begin{lemma}
+ Let $u, v \in R^n$ be columns such that $v^t \cdot u = 0$ and there exists $w = w(u) \in R^n$ satisfying $w^t \cdot u = a^N$ for some natural number $N$.
+ In this context one can define certain elements $Z^{1}(u,v), Z^{2}(v, u)$ of $\St(n, R)$. These elements satisfy the following relations:
+ \begin{itemize}
+  \item $Z^{1}(u, v_1 + v_2) = Z^{1}(u, v_1) \cdot Z^{1}(u, v_2)$;
+  \item $Z^{2}(v_1 + v_2, u) = Z^{2}(v_1, u) \cdot Z^{2}(v_2, u)$;
+  \item ${}^{g}\! Z^{\tau}(u, v) = Z^{\tau}(g \cdot u, g^* \cdot v)$, $\tau = 1..2$, $g \in \St(n, R)$ where $g^* = {g^t}^{-1}$ is the contragradient matrix.
+ \end{itemize}
+\end{lemma}
+\begin{proof} Both the construction of $Z^i$ and the relations for $Z^i$ are, in essence, just~\cite[Lemma~1.3]{T} applied twice. \end{proof}
+
+%TODO: Why we can assume u_1^t \cdot u_2 = 0$?
+Now let $g \in \E(n, R_a)$ be such that $g(e_1, e_2) = (\overline{u_1}, \overline{u_2})$ for some $u_1, u_2\in R^n$, $u_1^t \cdot u_2 = 0$.
+It is easy to find $w_1, w_2 \in R^n$ such that $w_1^t \cdot u_1 = a^{N_1}$, $w_2^t \cdot u_2 = a^{N_2}$.
+
+
+$Z^1(u, v) = Z^2(v, u)$.
+
 
 for each $(u,v) \in \E_n(R) (e_1, e_2)$ we can find $y$ such that $(u,v,y) = g (e_1, e_2, e_3)$.
 
