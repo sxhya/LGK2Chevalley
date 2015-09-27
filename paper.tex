@@ -2,6 +2,7 @@
 \usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, verbatim, enumitem, graphicx, mathtools, xfrac, tikz-cd, nameref, thmtools, hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[backend=biber, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
+\addbibresource{paper.bib}
 \usepackage[activate={true,nocompatibility}]{microtype}
 \usepackage[capitalize]{cleveref}
             
@@ -76,6 +77,46 @@ The authors of the present paper acknowledges financial support from Russian Sci
 
 \section {Main results}
 
+\subsection{Relative Steinberg group in rank $3$ and Tulenbaev's section map} 
+The main goal of this subsection is to construct Tulenbaev's section map from~\cite[\S~2]{T} for
+the linear Steinberg group of rank $3$. Combining this result with the amalgamation theorem
+of the the second named author (see~\cite[Theorem~9]{S15}) we deduce centrality for the orthogonal
+$\K_2$ in the next subsection.
+
+First of all, we will need to give yet another definition of the relative linear Steinberg group 
+(cf. \cite[Definitions~3.3 and 3.7]{S15}).
+
+\begin{dfn}
+ The relative Steinberg group $\St^*(n,R, I)$ is the group defined by the following two
+ families generators and four families of relations.
+ \begin{itemize}
+  \item Generators:
+  \begin{enumerate}
+  \item $X^1(u, v)$, where $u \in \E(n,R) \cdot e_1$, $v\ \in I^n$ such that $v^t \cdot u = 0$;
+  \item $X^2(u, v)$, where $u \in I^n$, $v \in \E(n,R) \cdot e_1$ such that $v^t \cdot u = 0$.
+ \end{enumerate}
+  Notice that the canonical image in $\E(n, R)$ of both $X^1(u, v)$ and $X^2(u, v)$ equals $T(u, v) = e_n + u \cdot v^T$.
+  \item Relations:
+  \begin{enumerate}
+  \item $X^1(u, v) \cdot X^1(u, w) = X^1(u, v+w)$, $u \in \E(n,R) \cdot e_1$, $v, w \in I^n$;
+  \item $X^2(u, v) \cdot X^2(w, v) = X^2(u+w, v)$, $u, w \in I^n$, $v \in \E(n,R) \cdot e_1$;
+  \item ${}^{X^\sigma(u^2, v^2)} \! X^\tau(u^1, v^1) = X^\tau(T(u^2, v^2) \cdot u^1, T(v^2, u^2)^{-1} \cdot v^1)$, $\sigma, \tau = 1..2$;
+  \item $X^1(u, vb) = X^2(ub, v)$ for $(u,v) \in E(n,R) \cdot (e_1, e_2)$, $b\in I$.
+ \end{enumerate}
+ \end{itemize}
+\end{dfn}
+It is easy to check correctness of the above definition.
+
+\begin{lemma}
+ The groups $\St^*(n, R, I)$ and $\St(n, R, I)$ are isomorphic.
+\end{lemma}
+\begin{proof}
+ TODO: 
+\end{proof}
+
+The next step is construct 
+
+
 \begin{dfn}
  Let $u$,$v$ be elements of $B^n$ such that $v^Tu = 0$ and there exists $w \in B^n$ such that $<w,u> = a^N$.
  In this context we define elements $Z^1(u,v)$ and 
@@ -88,6 +129,8 @@ $w^tu = a^N$, $z^Tv = a^N$, $x^T y = a^N$ + 6 additional orthogonality relations
 Computing $g = [Z^{1, N}(u xba^{2N}), Z^{2, N}(ua^{2N},v)]$ 
 $$ g = Z^{2, N}(ya^{2N} + uba^{5N},v) {Z^{2, N}(ya^{2N}, v)}^{-1} = Z^{2, N}(uba^{5N},v) = Z^2(uc, v)$$
 $$ g = ... = Z^1(u, vc)$$
+
+\subsection{Centrality of orthogonal $K_2$.} 
 
 \printbibliography
 
