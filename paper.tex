@@ -114,9 +114,40 @@ It is easy to check the correctness of the above definition.
  TODO: 
 \end{proof}
 
-The next step of the proof is to is construct certain elements in $\St(n, R)$ which are similar to Tulenbaev's elements $X_{u,v}(a)$ see~\cite[\S~1]{T}.
+The next step of the proof is to is construct certain elements in $\St(n, R)$ similar to Tulenbaev's elements $X_{u,v}(a)$ see~\cite[\S~1]{T}.
 
 Assume that $n \geq 4$. For the rest of this section $a$ denotes a nonnilpotent element of $R$.
+
+Let $v\in R^n$ be a column.
+A column $w\in R^n$ is called \emph{$v$-decomposable} if it can be presented as a finite sum $w = \sum\limits_{i=1}^n w^i$ of columns such that each $w^i$ 
+has at least two zero entries. 
+Denote by $D(v)$ the submodule of $R^n$ consisting of all $v$-decomposable columns.
+%For a column $v\in R^n$ denote by $I(v)$ the ideal of $R$ spanned by coordinates $v_1,\ldots, v_n$.
+
+Let $u,v,w\in R^n$ be columns such that $w^tv=0$.
+It is easy to check that $(uv)\cdot w = \sum_{i<j}w_{ij}$, where $w_{ij} = (w_iu_j - w_ju_i)(v_je_i - v_ie_j)\in{}\!A^n$ (cf.~\cite[Lemma~3.2]{Ka}).
+Such decomposition is called the {\it canonical} decomposition of $(uv)\cdot w$.
+In particular, this shows that row $a\cdot w$ is always $v$-decomposable for $a\in I(v)$, i.e. $I(v) \cdot O(v) \subseteq D(v)$.
+It is also obvious that $O(v)\subseteq O(bv)$, $D(v)\subseteq D(bv)$ for $b \in R$.
+
+Let $v$ be a (not neccessarily unimodular) column of height $n$, let $w$ be a $v$-decomposable row and $a$ be an element of $I(v)$.
+In this context Tulenbaev defines elements $X_{v,w}(a)$ of the Steinberg group $\St(n, A)$, $n\geq 4$ (see~\cite[\S~1]{T}).
+Tulenbaev requires $a \in I(v)$ in order to prove correctness of his definition.
+
+Let us list certain useful properties of these elements.
+\begin{lemma}\label{T13} Let $n\geq 4$. Elements $X_{v,w}(a)$ satisfy the following relations:
+\begin{enumerate}
+ \item $X_{v, w}(ab) = X_{v, bw}(a)$ for $w\in D(v)$, $b\in R$, $a\in I(v)$. If moreover $a\in b \cdot I(v)$ then $X_{v, w}(ab) = X_{bv, w}(a)$.
+ \item $X_{v,w_1 + w_2}(a) = X_{v, w_1}(a) X_{v, w_2}(a)$, $w_1, w_2 \in D(v)$, $a\in I(v)$.
+ \item \label{T133} For $g\in\St(n, A)$,  $w\in O(v)$, $a,b\in I(v)$  one has  $g^{-1}\cdot X_{v, bw}(a)\cdot g = X_{g^{-1}v, bwg}(a)$
+ \item Let $a$ be a nonnilpotent element of $A$.
+       For $n\geq 5$ let $(v_1,v_2)\in M_{n\times 2}(A)$ be a matrix such that its image in $M_{n\times 2}(A_a)$ is unimodular.
+       Let $w \in {}^n\!A$ be a row such that $wv_1=wv_2=0$. Then for sufficiently large natural numbers $k, m$ one has
+       $$X_{v_1 + bv_2, a^kw}(a^m) = X_{v_1,a^kw}(a^m)\cdot X_{v_2,ba^kw}(a^m),\ b\in A.$$
+\end{enumerate}\end{lemma}
+
+
+
 \begin{lemma}
  Let $u, v \in R^n$ be columns such that $v^t \cdot u = 0$ and there exists $w = w(u) \in R^n$ satisfying $w^t \cdot u = a^N$ for some natural number $N$.
  In this context one can define certain elements $Z^{1}(u,v), Z^{2}(v, u)$ of $\St(n, R)$. These elements satisfy the following relations:
