@@ -83,13 +83,13 @@ The authors of the present paper acknowledges financial support from Russian Sci
 
 \section {Main results}
 
-\subsection{Relative Steinberg group in rank $3$ and Tulenbaev's section map} 
+\subsection{Relative Steinberg group in rank $3$} 
 The main goal of this subsection is to construct Tulenbaev's section map from~\cite[\S~2]{T} for
 the linear Steinberg group of rank $3$. Combining this result with the amalgamation theorem
 of the the second named author (see~\cite[Theorem~9]{S15}) we deduce centrality for the orthogonal
 $\K_2$ in the next subsection.
 
-First of all, we will need to give yet another definition of the relative linear Steinberg group 
+First of all, we will need to formulate yet another presentation of the relative linear Steinberg group 
 (cf. \cite[Definitions~3.3 and 3.7]{S15}).
 
 \begin{dfn}
@@ -101,7 +101,7 @@ First of all, we will need to give yet another definition of the relative linear
   \item $X^1(u, v)$, where $u \in \E(n,R) \cdot e_1$, $v\ \in I^n$ such that $v^t \cdot u = 0$;
   \item $X^2(u, v)$, where $u \in I^n$, $v \in \E(n,R) \cdot e_1$ such that $v^t \cdot u = 0$.
  \end{enumerate}
-  Notice that $\phi$ maps both $X^1(u, v)$ and $X^2(u, v)$ to $T(u, v) = e_n + u \cdot v^T \in \E(n, R, I)$.
+  Notice that $\phi$ maps both $X^1(u, v)$ and $X^2(u, v)$ to $T(u, v) = e + u \cdot v^t \in \E(n, R, I)$.
   \item Relations:
   \begin{enumerate}
   \item $X^1(u, v) \cdot X^1(u, w) = X^1(u, v+w)$, $u \in \E(n,R) \cdot e_1$, $v, w \in I^n$;
@@ -124,7 +124,7 @@ The next step of the proof is to is construct certain elements in $\St(n, R)$ si
 
 Let $v\in R^n$ be a column.
 Denote by $O(v)$ the submodule of $R^n$ consisting of all columns $w$ such that $w^t \cdot v = 0$.
-A column $w\in R^n$ is called \emph{$v$-decomposable} if it can be presented as a finite sum $w = \sum\limits_{i=1}^n w^i$ such that each $w^i$ has at least two zero entries and $v^t \cdot w^i = 0$. 
+A column $w\in R^n$ is called \emph{$v$-decomposable} if it can be presented as a finite sum $w = \sum\limits_{i=1}^p w^i$ such that each $w^i$ has at least two zero entries and $v^t \cdot w^i = 0$. 
 Denote by $D(v)$ the submodule of $O(v)$ consisting of all $v$-decomposable columns.
 For a column $v\in R^n$ denote by $I(v)$ the ideal of $R$ spanned by its entries $v_1,\ldots, v_n$.
 
@@ -143,8 +143,8 @@ Assume that $n \geq 4$.
 One can define two families of elements $Z^\tau(u, v, a)$, $\tau=1,2$ of the group $\St(n, R)$ parametrized by $(u, v, a) \in B^\tau$ satisfying the following properties:
  \begin{lemlist}
   \item \label{item:proj} $\phi(Z^\tau(u, v, a)) = e + uav^t \in \E(n, R)$, $(u,v,a) \in B^\tau$;
-  \item \label{item:add1} $Z^{1}(u, v_1 + v_2, a) = Z^{1}(u, v_1, a) \cdot Z^{1}(u, v_2, a)$;
-  \item \label{item:add2} $Z^{2}(v_1 + v_2, u, a) = Z^{2}(v_1, u, a) \cdot Z^{2}(v_2, u, a)$;
+  \item \label{item:add1} $Z^{1}(u, v + w, a) = Z^{1}(u, v, a) \cdot Z^{1}(u, w, a)$;
+  \item \label{item:add2} $Z^{2}(v + w, u, a) = Z^{2}(v, u, a) \cdot Z^{2}(w, u, a)$;
   \item \label{item:scalar} for $\tau=1,2$ and $b \in R$ if $(u,vb,a), (ub, v, a) \in B^\tau$ then one has
    $$Z^\tau(u,vb, a) = Z^\tau(u, v, ab) = Z^\tau (ub, v, a);	$$
   \item \label{item:conj} ${}^{g}\! Z^{\tau}(u, v, a) = Z^{\tau}(\phi(g) \cdot u, \phi(g)^* \cdot v, a)$, $\tau = 1,2$, $g \in \St(n, R)$.
@@ -152,9 +152,11 @@ One can define two families of elements $Z^\tau(u, v, a)$, $\tau=1,2$ of the gro
 \end{lemma}
 \begin{proof}
 One constructs the elements $Z^1(u,v,a)$ in exactly the same way as Tulenbaev constructs his elements $X_{u,v}(a)$ (see definitions preceding~\cite[Lemma~1.2]{T}).
-Next, the elements $Z^2(u,v,a)$ are obtained by ``transposing'' Tulenbaev's construction.
+Indeed, set
+\begin{equation} Z^1(v, w, a) = \prod\limits_{k=1}^p X(v, a \cdot w^k), \quad Z^2(w, v, a) = \prod\limits_{k=1}^p X(a \cdot w^k, v). \end{equation}
+where $X(u, v)$ denotes the elements defined by Tulenbaev before~\cite[Lemma~1.1]{T}.
 
-All the properties (with the exception of the last one in the case $n=4$) can be proved by the same token as in~\cite[Lemma~1.3]{T}.
+The correctness of this definition and all the assertions of the lemma (with the exception of the last one in the case $n=4$) can be proved by the same token as in~\cite[Lemma~1.3]{T}.
 To check the last property in the case $n=4$ one has to use the argument of W. van~der~Kallen (cf.~\cite{Ka}).
 %TODO: Write more details
 \end{proof}
