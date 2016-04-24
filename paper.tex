@@ -197,52 +197,57 @@ Afterwards, W.~van~der~Kallen developed Suslin's ideas and showed for $n\geq4$ t
 $$\{X(u,\,v)\mid u\in\Um(n,\,R),\ v\in R^n,\ u^tv=0\}$$ and the following list of relations (see~\cite{vdK}):
 \setcounter{equation}{0} \renewcommand{\theequation}{K\arabic{equation}}
 \begin{align}
-&X(u,\,v)X(u,\,w)=X(u,\,v+w),\\
+&X(u,\,v)X(u,\,w)=X(u,\,v+w), \label{add1} \\
 &X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v').
 \end{align}
 This presentation clearly implies that $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)$ is a central extension.
 Notice that our notation for the generators slightly differs from that of~\cite{vdK}, e.\,g. our elements $X(u, v)$ correspond to van der Kallen's $(u, v^t)$.
 
+Recall that an ideal $I\trianglelefteq R$ is called a \emph{splitting ideal} if the canonical projection $R \twoheadrightarrow R/I$ splits as a unital ring morphism.
 For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(n,\,R,\,I)$ can be defined as the kernel $\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$.
-%Clearly, $\St(n,\,R[X],\,XR[X])$ is the kernel of the evaluation ``$X=0$''.
+
+For general $I$ the relative Steinberg group is no more a subgroup of $\St(n, R)$ but rather is its central extension.
+For the purposes of the present text it suffices to consider only relative Steinberg groups corresponding to splitting ideals $I$.
+For more information regarding general relative Steinberg groups we refer the reader to \cite[Section~3]{SCh}.
 
 \section{Yet another presentation for $\St(4, R)$.} \label{sec:yap}
+The key ingredient in Tulenbaev's proof of the local-global principle is the construction of the homomorphism $T$ which fits into the following commutative diagram.
+$$\xymatrix{\St(n,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d] & \St(n, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
+             \St(n,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T} \ar@{^{(}->}[r] & \St(n, R_a[X])}$$
+Here $a$ is arbitrary nonnilpotent element of $R$, $n\geq5$ and $\lambda_a^*$ is the morphism induced by the morphism $\lambda_a\colon R \to R_a$ of principal localisation at $a$.
+Notice that $XR_a[X]$ is a splitting ideal for both $R_a[X]$ and $R \ltimes XR_a[X]$.
+It is clear that the image of $T$ is contained in the image of the top arrow, therefore this implies the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
+%This $T$ is an inverse to a map induced by localisation, so that constructing $\mathrm T$ may be treated
+%as a proof of excision property for Steinberg group in this very particular situation.
 
-The key step in Tulenbaev's proof is constructing a homomorphism
-$$
-\mathrm T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X],\,XR_a[X])
-$$
-for any (non-nilpotent) element $a\in R$, $n\geq5$ ($R_a$ stands for a principle localisation of $R$ in $a$). This $\mathrm T$ is an inverse to a map induced by localisation, so that constructing $\mathrm T$ may be treated as a proof of excision property for Steinberg group in this very particular situation.
+%To prove the local--global principle for Steinberg groups of type $\mathrm D_l$ and centrality 
+%of $\mathrm K_2(\mathrm D_l,\,R)$ we need such a map for $n=4$ (i.e., for the group of type $\mathrm A_3$).
 
-To prove the local--global principle for Steinberg groups of type $\mathrm D_l$ and centrality of $\mathrm K_2(\mathrm D_l,\,R)$ we need such a map for $n=4$ (i.e., for the group of type $\mathrm A_3$).
-
-Tulenbaev uses the following presentaion for the relative Steinberg group, see~\cite[Prop.~1.6]{Tul}. Assume that $I\trianglelefteq R$ such that a short exact sequence
-\renewcommand{\theequation}{$\dagger$}
-\begin{align}
-\xymatrix{
-0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0
-}
-\end{align}
-splits, i.e., $\pi\sigma=1$. The $\St(n,\,R,\,I)$ is isomorphic to a group given by generators
-$$
-\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}
-$$
-subject to relations
+In order to construct the arrow $T$ Tulenbaev uses the following presentation for the relative Steinberg group, see~\cite[Proposition~1.6]{Tul}. 
+%Assume that $I\trianglelefteq R$ such that a short exact sequence
+%\renewcommand{\theequation}{$\dagger$}
+%\begin{align} \xymatrix{0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0} \end{align} splits, i.e., $\pi\sigma=1$.
+\begin{prop}\label{prop:TulPres}
+For a splitting ideal $I$ the group $\St(n,\,R,\,I)$ is isomorphic to the group given by generators
+$$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ subject to relations
 \setcounter{equation}{0}
 \renewcommand{\theequation}{T\arabic{equation}}
 \begin{align}
 &X(u,\,v)X(u,\,w)=X(u,\,v+w),\\
-&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'),\\
-&X(ur+w,\,v)=X(u,\,vr)X(w,\,v)\,\text{ for }r\in R,\ (u,\,w)\in\Um_{n\times2}(R).
+&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'), \label{add2} \\
+&X(ur+w,\,v)=X(u,\,vr)X(w,\,v)\,\text{ for }r\in R,\ (u,\,w)\in\Um_{n\times2}(R) \label{add3}.
 \end{align}
-Here $\Um_{n\times2}(R)$ is a set of $n\times2$ matrices $M$ such that there exists a $2\times n$ matrix $N$ with $NM=\begin{pmatrix}1&0\\0&1\end{pmatrix}$. The ideal satisfying $\dagger$ is called the splitting ideal, $XR_a[X]\trianglelefteq R_a[X]$ is obviously the splitting one.
+\end{prop}
+Here $\Um_{n\times2}(R)$ denotes the set of $n\times2$ \emph{unimodular matrices}, i.\,e. matrices $M$ such that there exists a $2\times n$ matrix $N$ satisfying $NM=\begin{pmatrix}1&0\\0&1\end{pmatrix}$.
 
-Another presentations of van der Kallen and Tulenbaev are given in terms of generators parametrised by pairs of vectors, where the first one is ``good'' (unimodular or a coloumn of an elementary matrix) and the second one is arbitrary. This allows to formulate easily an additivity by the second argument, but one has to write something similar to T3 instead of additivity by the first one.
+Both ``another presentations'' of van der Kallen and Tulenbaev are given in terms of generators parametrised by pairs of vectors,
+ where the first one is in some sense ``good'' (i.\,e. unimodular or a column of an elementary matrix) and the second one is arbitrary.
+It is easy to formulate the additivity property in the second argument for these generators (cf. \eqref{add1}, \eqref{add2}),
+while it is not so easy when it comes for the additivity in the first argument (cf. \eqref{add3}).
+%Such presentations allowed them to formulate easily an additivity by the second argument, but one has to write something similar to T3 instead of additivity by the first one.
 
 Now, we need to construct a homomorphism
-$$
-\mathrm T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X],\,XR_a[X]),
-$$
+$$\mathrm T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X],\,XR_a[X]),$$
 i.e., to find elements in the target group subject to Tulenbaev's relations, but because of T3 one can do it only for $n\geq5$, see~\cite[Lemmas~1.2 and~1.3\,c)]{Tul}.
 
 One can not parametrise generators by a pair of arbitrary vectors since it is not even known that $t(u,\,v)\in\E(n,\,R)$ for arbitrary orthogonal $u$ and $v$~\cite{Rao}. 
