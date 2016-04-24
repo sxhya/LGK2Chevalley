@@ -31,6 +31,7 @@
 \theoremstyle{remark} \newtheorem{rk}[lm]{Remark} \Crefname{rk}{Remark}{Remarks}
 \newtheorem*{mtm}{Main Theorem}
 \newtheorem*{atm}{Another Presentation}
+\newlist{lmlist}{enumerate}{1} \setlist[lmlist]{label={\rm(\roman{lmlisti})}, ref=\thelm.(\roman{lmlisti}),noitemsep} \Crefname{lmlisti}{Lemma}{Lemmas}
 
 
 %Page layout
@@ -198,15 +199,15 @@ $$\{X(u,\,v)\mid u\in\Um(n,\,R),\ v\in R^n,\ u^tv=0\}$$ and the following list o
 \setcounter{equation}{0} \renewcommand{\theequation}{K\arabic{equation}}
 \begin{align}
 &X(u,\,v)X(u,\,w)=X(u,\,v+w), \label{add1} \\
-&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v').
+&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'). \label{conj1}
 \end{align}
 This presentation clearly implies that $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)$ is a central extension.
 Notice that our notation for the generators slightly differs from that of~\cite{vdK}, e.\,g. our elements $X(u, v)$ correspond to van der Kallen's $(u, v^t)$.
 
 Recall that an ideal $I\trianglelefteq R$ is called a \emph{splitting ideal} if the canonical projection $R \twoheadrightarrow R/I$ splits as a unital ring morphism.
-For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(n,\,R,\,I)$ can be defined as the kernel $\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$.
+For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(n,\,R,\,I) = \St(\rA_{n-1}, R, I)$ can be defined as the kernel $\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$.
 
-For general $I$ the relative Steinberg group is no more a subgroup of $\St(n, R)$ but rather is its central extension.
+For a general $I$ the relative Steinberg group $\St(\Phi, R, I)$ is no more a subgroup of $\St(\Phi, R)$ but rather is its central extension.
 For the purposes of the present text it suffices to consider only relative Steinberg groups corresponding to splitting ideals $I$.
 For more information regarding general relative Steinberg groups we refer the reader to \cite[Section~3]{SCh}.
 
@@ -214,9 +215,9 @@ For more information regarding general relative Steinberg groups we refer the re
 The key ingredient in Tulenbaev's proof of the local-global principle is the construction of the homomorphism $T$ which fits into the following commutative diagram.
 $$\xymatrix{\St(n,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d] & \St(n, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
              \St(n,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T} \ar@{^{(}->}[r] & \St(n, R_a[X])}$$
-Here $a$ is arbitrary nonnilpotent element of $R$, $n\geq5$ and $\lambda_a^*$ is the morphism induced by the morphism $\lambda_a\colon R \to R_a$ of principal localisation at $a$.
+Here $n\geq5$, $a$ is arbitrary nonnilpotent element of $R$ and $\lambda_a^*$ is the morphism induced by the morphism $\lambda_a\colon R \to R_a$ of principal localisation at $a$.
 Notice that $XR_a[X]$ is a splitting ideal for both $R_a[X]$ and $R \ltimes XR_a[X]$.
-It is clear that the image of $T$ is contained in the image of the top arrow, therefore this implies the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
+It is clear that the image of $T$ is contained in the image of the top arrow, therefore this implies that the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
 %This $T$ is an inverse to a map induced by localisation, so that constructing $\mathrm T$ may be treated
 %as a proof of excision property for Steinberg group in this very particular situation.
 
@@ -233,8 +234,8 @@ $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ subject to relations
 \setcounter{equation}{0}
 \renewcommand{\theequation}{T\arabic{equation}}
 \begin{align}
-&X(u,\,v)X(u,\,w)=X(u,\,v+w),\\
-&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'), \label{add2} \\
+&X(u,\,v)X(u,\,w)=X(u,\,v+w), \label{add2}\\
+&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'), \label{conj2}  \\
 &X(ur+w,\,v)=X(u,\,vr)X(w,\,v)\,\text{ for }r\in R,\ (u,\,w)\in\Um_{n\times2}(R) \label{add3}.
 \end{align}
 \end{prop}
@@ -246,84 +247,69 @@ It is easy to formulate the additivity property in the second argument for these
 while it is not so easy when it comes for the additivity in the first argument (cf. \eqref{add3}).
 %Such presentations allowed them to formulate easily an additivity by the second argument, but one has to write something similar to T3 instead of additivity by the first one.
 
-Now, we need to construct a homomorphism
-$$\mathrm T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X],\,XR_a[X]),$$
-i.e., to find elements in the target group subject to Tulenbaev's relations, but because of T3 one can do it only for $n\geq5$, see~\cite[Lemmas~1.2 and~1.3\,c)]{Tul}.
+The construction of the homomorphism $T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X]])$
+amounts to choosing certain elements in the target group $\St(n,\,R\ltimes XR_a[X]])$ and proving that these elements satisfy the relations \eqref{add2}--\eqref{add3}, see~\cite[Lemmas~1.2 and~1.3\,c)]{Tul}.
+The main problem with this recipe is that the assumption $n\geq5$ is essential to check that the relation~\eqref{add3} holds.
 
-One can not parametrise generators by a pair of arbitrary vectors since it is not even known that $t(u,\,v)\in\E(n,\,R)$ for arbitrary orthogonal $u$ and $v$~\cite{Rao}. 
+It is not possible to choose arbitrary orthogonal vectors $u$, $v$ as parameters for the generators because in this situation it is not even known that $t(u,\,v)\in\E(n,\,R)$, see~\cite{Rao}. 
 
-To generalise Tulenbaev's results for $n=4$ we use a presentation with two types of generators: $F(u,\,v)$ with $u$ good and $v$ arbitrary, which are additive by the second component, and $S(u,\,v)$ with $u$ arbitrary and $v$ good, which are additive by the first component. For $u$ and $v$ both good we require that these two types of generators coincide. More precisely,
+To generalise Tulenbaev's results for $n=4$ we will use a more ``symmetric`` presentation with two types of generators: 
+$F(u,\,v)$ with $u$ ''good`` and $v$ arbitrary and $S(u,\,v)$ with $u$ arbitrary and $v$ ''good``.
+The generators $F(u,\,v)$ will be additive in the second component, while $S(u,\,v)$ will be additive in the first one.
+When $u$ and $v$ are both ''good`` we require these two generators to coincide.
+More formally, we have the following presentation.
 
 \begin{df}
-for $I\trianglelefteq R$, $n\geq4$ define $\St^*(n,\,R,\,I)$ to be a group given by the set of generators
+For $I\trianglelefteq R$ and $n\geq4$ define $\St^*(n,\,R,\,I)$ to be the group with the set of generators
 \begin{multline*}
-\{F(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}\,\cup\\
-\cup\{S(u,\,v)\mid u\in I^n,\ v\in\E(n,\,R)e_1,\ u^tv=0\}
+\{F(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}\,\cup\{S(u,\,v)\mid u\in I^n,\ v\in\E(n,\,R)e_1,\ u^tv=0\}
 \end{multline*}
 subject to relations
 \setcounter{equation}{0}
 \renewcommand{\theequation}{R\arabic{equation}}
 \begin{align}
-&F(u,\,v)F(u,\,w)=F(u,\,v+w),\\
-&S(u,\,v)S(w,\,v)=S(u+w,\,v),\\
-&F(u,\,v)F(u',\,v')F(u,\,v)\inv=F(t(u,\,v)u',\,t(v,\,u)\inv v'),\\
-&F(u,\,va)=S(ua,\,v)\ \forall\,a\in I,\,(u,\,v^t)=(Me_1,\,e_2^tM\inv),\,M\!\in\E(n,\,R).
+&F(u,\,v)F(u,\,w)=F(u,\,v+w), \label{add4}\\
+&S(u,\,v)S(w,\,v)=S(u+w,\,v), \label{add5}\\
+&F(u,\,v)F(u',\,v')F(u,\,v)\inv=F(t(u,\,v)u',\,t(v,\,u)\inv v'), \label{conj3} \\
+&F(u,\,va)=S(ua,\,v)\ \forall\,a\in I,\,(u,\,v^t)=(M e_1,\,e_2^t M\inv),\,M\!\in\E(n,\,R) \label{coinc}.
 \end{align}
 \end{df}
-
-One could probably wonder why we assumed only one relation on conjugated element, instead of four different relations on generators of each type conjugated by generators of each type. Three ``missing'' relations actualy hold automaticaly.
-
+Notice that we only described how a generator $F(u, v)$ acts via conjugation on another generator $F(u',v')$ and omitted three similar relations involving generators $S(u,v)$ of the second type.
+The reason for this is the following lemma which asserts that the ``missing'' relations will follow automatically from \eqref{add4}--\eqref{coinc}.
 \begin{lm}
 \label{allyouneedisf}
-Denote $\varphi\colon\St^*(n,\,R,\,I)\rightarrow\E(n,\,R)$ the natural map, sending $F(u,\,v)\mapsto t(u,\,v)$, $S(u,\,v)\mapsto t(u,\,v)$.
-\begin{enumerate}
-\item 
-$\St^*(n,\,R,\,I)$ is generated by the set of elements
-$$
-\{F(u,\,va)\mid a\in I,\ (u,\,v^t)=(Me_1,\,e_2^tM\inv),\,M\in\E(n,\,R)\};
-$$
-\item
-for any $g\in\St^*(n,\,R,\,I)$ holds
-\setcounter{equation}{2}
-\renewcommand{\theequation}{R\arabic{equation}'}
-\begin{align}
-&gF(u,\,v)g\inv=F(\varphi(g)u,\,\varphi(g\inv)^tv);
-\end{align}
-\item
-for any $g\in\St^*(n,\,R,\,I)$ holds
-\setcounter{equation}{2}
-\renewcommand{\theequation}{R\arabic{equation}''}
-\begin{align}
-&gS(u,\,v)g\inv=S(\varphi(g)u,\,\varphi(g\inv)^tv);
-\end{align}
-\item
-there exists a well-defined ``transpose automorphism''
-$$
-F(u,\,v)^t=S(v,\,u),\quad S(u,\,v)^t=F(v,\,u).
-$$
-\end{enumerate}
-\end{lm}
+Denote by $\phi\colon\St^*(n,\,R,\,I)\rightarrow\E(n,\,R)$ the natural map sending $F(u,\,v)\mapsto t(u,\,v)$ and $S(u,\,v)\mapsto t(u,\,v)$.
+Then the following facts are true.
+\begin{lmlist}
+\item $\St^*(n,\,R,\,I)$ is generated as an abstract group by the set of elements 
+      $$\{F(u,\,va)\mid a\in I,\ (u,\,v^t)=(Me_1,\,e_2^tM\inv),\,M\in\E(n,\,R)\};$$
+\item for any $g\in\St^*(n,\,R,\,I)$ one has 
+      \setcounter{equation}{2} \renewcommand{\theequation}{R\arabic{equation}'}
+      \begin{equation} gF(u,\,v)g\inv=F(\phi(g)u,\,\phi(g\inv)^tv); \end{equation}
+\item for any $g\in\St^*(n,\,R,\,I)$ one has
+       \setcounter{equation}{2} \renewcommand{\theequation}{R\arabic{equation}''}
+      \begin{equation} gS(u,\,v)g\inv=S(\phi(g)u,\,\phi(g\inv)^tv); \end{equation}
+\item there is a ``transpose automorphism'' defined on $\St^*(n, R, I)$ satisfying
+      $$F(u,\,v)^t=S(v,\,u),\quad S(u,\,v)^t=F(v,\,u).$$
+\end{lmlist} \end{lm}
 
 \begin{proof}
-Take an arbitrary generator of the first type $F(u,\,v)$ and take $M\in\E(n,\,R)$ such that $F(u,\,v)=F(Me_1,\,M^*\tilde v)$. Here $M^*$ stands for a contragradient matrix, $M^*=(M\inv)^t$. By R1 we have
-$$
-F(u,\,v)=\prod\limits_{k\neq1}F(Me_1,\,M^*e_k\tilde v_k)
-$$
-where $\tilde v_k$ stands for $k$-th coordinate of $\tilde v=\sum e_k\tilde v_k$. Similarly, with the use of R4 we get 
-$$
-S(u,\,v)=\prod\limits_{k\neq1}S(Ne_k\tilde u_k,\,N^*e_1)=\prod\limits_{k\neq1}F(Ne_k,\,N^*e_1\tilde u_k)
-$$
-and obtain a). Obviously, b) follows from a). For c) it is sufficient to show that
-$$
-F(u,\,v)S(u',\,v')F(u,\,v)\inv=S(t(u,\,v)u',\,t(u,\,v)^*v').
-$$
-Let $S(u',\,v')=\prod F(Ne_k,\,N^*e_1\tilde u_k)$, then
+Let $F(u,\,v)$ be an arbitrary generator of the first type and let $M\in\E(n,\,R)$ be such that $F(u,\,v)=F(Me_1,\,M^*\tilde v)$. 
+Here we denote by $M^*$ the contragradient matrix, $M^*=(M\inv)^t$. 
+By \eqref{add4} we have $$F(u,\,v)=\prod\limits_{k\neq1}F(Me_1,\,M^*e_k\tilde v_k)$$
+where $\tilde v_k$ stands for $k$-th coordinate of $\tilde v=\sum e_i\tilde v_i$.
+Applying relations \eqref{add5}, \eqref{coinc} we get
+$$S(u,\,v)=\prod\limits_{k\neq1}S(Ne_k\tilde u_k,\,N^*e_1)=\prod\limits_{k\neq1}F(Ne_k,\,N^*e_1\tilde u_k)$$
+and, thus, obtain $(\mathrm{i})$. Obviously, $(\mathrm{ii})$ follows from $(\mathrm{i})$. 
+To prove $(\mathrm{iii})$ it suffices to show that
+$$F(u,\,v)S(u',\,v')F(u,\,v)\inv=S(t(u,\,v)u',\,t(u,\,v)^*v').$$
+For $S(u',\,v')=\prod_{k\neq 1} F(Ne_k,\,N^*e_1\tilde u_k)$ we have
 \begin{multline*}
 F(u,\,v)S(u',\,v')F(u,\,v)\inv=F(u,\,v)\prod F(Ne_k,\,N^*e_1\tilde u_k)F(u,\,v)\inv=\\
 =\prod F(t(u,\,v)Ne_k,\,t(u,\,v)^*N^*e_1\tilde u_k)=\\
 =\prod S(t(u,\,v)Ne_k\tilde u_k,\,t(u,\,v)^*N^*e_1)=S(t(u,\,v)u',\,t(u,\,v)^*v').
 \end{multline*}
-Finally, d) follows from c).
+Finally, $(\mathrm{iv})$ follows from $(\mathrm{iii})$.
 \end{proof}
 
 Next, we show that for a splitting ideal $I\trianglelefteq R$ the group $\St^*(n,\,R,\,I)$ is isomorphic to $\St(n,\,R,\,I)=\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$. With this end we construct two inverse homomorphisms
