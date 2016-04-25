@@ -230,8 +230,8 @@ In order to construct the arrow $T$ Tulenbaev uses the following presentation fo
 %\renewcommand{\theequation}{$\dagger$}
 %\begin{align} \xymatrix{0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0} \end{align} splits, i.e., $\pi\sigma=1$.
 \begin{prop}\label{prop:TulPres}
-For a splitting ideal $I$ the group $\St(n,\,R,\,I)$ is isomorphic to the group given by generators
-$$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ subject to relations
+For a splitting ideal $I$ and $n\geq 4$ the group $\St(n,\,R,\,I)$ is isomorphic to the group defined by generators
+$$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ and the following set of relations
 \setcounter{equation}{0}
 \renewcommand{\theequation}{T\arabic{equation}}
 \begin{align}
@@ -239,17 +239,18 @@ $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ subject to relations
 &X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'), \label{conj2}  \\
 &X(ur+w,\,v)=X(u,\,vr)X(w,\,v)\,\text{ for }r\in R,\ (u,\,w)\in\Um_{n\times2}(R) \label{add3}.
 \end{align}
+Moreover, the group $\St(n, R)$ decomposes into the semidirect product $\St(n,\,R, I)\rtimes \St(n,\,R/I)$.
 \end{prop}
 Here $\Um_{n\times2}(R)$ denotes the set of $n\times2$ \emph{unimodular matrices}, i.\,e. matrices $M$ such that there exists a $2\times n$ matrix $N$ satisfying $NM=\begin{pmatrix}1&0\\0&1\end{pmatrix}$.
 
 Both ``another presentations'' of van der Kallen and Tulenbaev are given in terms of generators parametrised by pairs of vectors,
- where the first one is in some sense ``good'' (i.\,e. unimodular or a column of an elementary matrix) and the second one is arbitrary.
+ where the first one is ``good'' in some sense  (i.\,e. unimodular or a column of an elementary matrix) while the second one is arbitrary.
 It is easy to formulate the additivity property in the second argument for these generators (cf. \eqref{add1}, \eqref{add2}),
-while it is not so easy when it comes for the additivity in the first argument (cf. \eqref{add3}).
+while it is not so easy when it comes to the additivity in the first argument (cf. \eqref{add3}).
 %Such presentations allowed them to formulate easily an additivity by the second argument, but one has to write something similar to T3 instead of additivity by the first one.
 
-The construction of the homomorphism $T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X]])$
-amounts to choosing certain elements in the target group $\St(n,\,R\ltimes XR_a[X]])$ and proving that these elements satisfy the relations \eqref{add2}--\eqref{add3}, see~\cite[Lemmas~1.2 and~1.3\,c)]{Tul}.
+The construction of the homomorphism $T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X])$
+amounts to choosing certain elements in the group $\St(n,\,R\ltimes XR_a[X])$ and proving that these elements satisfy relations \eqref{add2}--\eqref{add3}, see~\cite[Lemmas~1.2 and~1.3\,c)]{Tul}.
 The main problem with this recipe is that the assumption $n\geq5$ is essential to check that the relation~\eqref{add3} holds.
 
 It is not possible to choose arbitrary orthogonal vectors $u$, $v$ as parameters for the generators because in this situation it is not even known that $t(u,\,v)\in\E(n,\,R)$, see~\cite{Rao}. 
@@ -321,7 +322,7 @@ Firstly, we define $\iota$ as a homomorphism to the absolute group (for which we
 $$\xymatrix{\St^*(n,\,R,\,I)\ar@<0.0ex>[r]^{\iota}&\St(n,\,R).}$$
 
 Clearly, we must map the elements $F(u,\,v)$ to van der Kallen's generators $X(u,\,v)$.
-Now we should find the images for the elements $S(u,\,v)$ as well.
+Now we should find the images for elements $S(u,\,v)$ as well.
 First of all, recall that van der Kallen in~\cite[3.8--3.10]{vdK} constructs the following elements
 $$x(u,\,v)\in\St(n,\,R),\ u^tv=0,\ u_i=0\,\text{ or }\,v_i=0\,\text{ for some }\,1\leq i\leq n.$$
 The following definition is the ``transpose'' of \cite[3.13]{vdK}.
@@ -340,11 +341,11 @@ Repeating~\cite[3.14--3.15]{vdK} verbatim one shows the following.
                   \item $\overline Y(u,\,v)$ consists of exactly one element. \end{enumerate} \end{lm}
 
 We denote the only element of $\overline Y(u,\,v)$ by $Y(u,\,v)$. 
-Now we can define $\iota$ by sending $S(u,\,v)\in\St^*(n,\,R,\,I)$ to $Y(u,\,v)$. 
-To show that the map $\iota$ is well-defined we should check that the elements $X(u,\,v)$ and $Y(u,\,v)$ satisfy the relations 
+Now we can finish the definition of $\iota$ by requiring that $\iota(S(u,\,v)) = Y(u,\,v)$ for $S(u,\,v)\in\St^*(n,\,R,\,I)$. 
+To show that the map $\iota$ is well-defined we should check that elements $X(u,\,v)$ and $Y(u,\,v)$ satisfy the relations 
 \eqref{add4}--\eqref{coinc} (with $F$'s and $S$'s replaced with $X$'s and $Y$'s).
-Notice that the validity of relations \eqref{add4}--\eqref{conj3} has already been checked.
-\begin{lm} For $(u,\,v^t)=(Me_1,\,e_2^tM\inv)$, $M\in\E(n,\,R)$, $a\in I$ one has $X(u,\,va)=Y(ua,\,v)$. \end{lm}
+Only the validity of relation \eqref{coinc} is not immediately obvious.
+\begin{lm} \label{lm:XY} For $(u,\,v^t)=(Me_1,\,e_2^tM\inv)$, $M\in\E(n,\,R)$, $a\in I$ one has $X(u,\,va)=Y(ua,\,v)$. \end{lm}
 \begin{proof}
 In view of the above lemma we only need to show that $X(e_1,\,e_2a)=Y(e_1a,\,e_2)$.
 This equality can be obtained by computing the commutator $[Y(-e_3,\,e_2),\,X(e_1,\,e_3a)]$ in two ways:
@@ -352,7 +353,7 @@ $$ Y(-e_3,\,e_2)X(e_1,\,e_3a)Y(-e_3,\,e_2)\inv\cdot X(e_1,\,-e_3a)=X(e_1,\,e_2a)
 $$ Y(-e_3,\,e_2)\cdot\,X(e_1,\,e_3a)Y(e_3,\,e_2)X(e_1,\,e_3a)\inv=Y(e_1a,\,e_2). \qedhere $$
 \end{proof}
 
-We can sum up the above discussion into the following result.
+The following result is a consequence of the above argument.
 \begin{lm} \label{lm:map-iota}
  For any $I \trianglelefteq R$ there exists a well-defined homomorphism $$\iota\colon\St^*(n,\,R,\,I)\rightarrow\St(n,\,R, I) \subseteq \St(n, R)$$ 
  satisfying the equalities $\iota (F(u,\,v)) = X(u,\,v)$ and $\iota (S(u,\,v)) = Y(u,\,v)$. \end{lm}
@@ -363,8 +364,12 @@ Clearly, the induced group morphism $\rho^*\colon\St(n,\,R)\rightarrow\St(n,\,R/
 Observe that $\E(n,\,R)\epi\E(n,\,R/I)$ is surjective, therefore for $x\in\E(n,\,R)e_1$ one has $\rho(x)\in\E(n,\,R/I)e_1$. 
 From the additivity relations we get that $X(u,\,0)=1=Y(0,\,v)$, hence $\mathrm{Im}(\iota)\subseteq\Ker(\rho^*)=\St(n,\,R,\,I)$, as required. \end{proof}
 
+In order to construct the arrow $\kappa$ we use the presentation from \cref{prop:TulPres}.
+We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
+We have to check that $F(u,v)$ satisfy the relations \eqref{add2}--\eqref{add3}.
+The relations \eqref{add2} and \eqref{conj2} are immediately obvious.
  
-
+\begin{comment}
 We constructed $\iota$ for an arbitrary $I\trianglelefteq R$. For $I$ a splitting ideal we construct an inverse homomorphism
 $$
 \kappa\colon\St(n,\,R,\,I)\rightarrow\St^*(n,\,R,\,I).
@@ -414,6 +419,7 @@ $$
 \kappa\colon\St(n,\,R,\,I)\rightarrow\St^*(n,\,R,\,I)
 $$
 sending $y_{ij}(a)$ to $y^*_{ij}(a)$. Obviously, $\iota\circ\kappa=\mathrm{id}$ (cf.~\cite[3.6\,d)]{vdK}), thus $\kappa$ is injective. Surjectivity of $\kappa$ follows from Lemma~\ref{allyouneedisf}\,a), thus it is an isomorphism and $\iota$ is inverse to it.
+\end{comment}
 
 At this point we obtained the presentation $\St^*(n,\,R,\,I)$ for the $\St(n,\,R,\,I)$ where $I\trianglelefteq R$ is a splitting ideal, $n\geq4$.
 
