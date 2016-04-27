@@ -230,6 +230,7 @@ It is clear that the image of $T$ is contained in the image of the top arrow, th
 In order to construct the arrow $T$ Tulenbaev uses the following presentation for the relative Steinberg group, see~\cite[Proposition~1.6]{Tul}. 
 %Assume that $I\trianglelefteq R$ such that a short exact sequence
 %\renewcommand{\theequation}{$\dagger$}
+\setcounter{lm}{1}
 \begin{prop}\label{prop:TulPres}
 For a splitting ideal $I$ and $n\geq 4$ the group $\St(n,\,R,\,I)$ is isomorphic to the group defined by generators
 $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ and the following set of relations
@@ -311,7 +312,7 @@ The reason for this is the following lemma which asserts that the ``missing'' re
 \label{allyouneedisf}
 Denote by $\phi\colon\St^*(n,\,R,\,I)\rightarrow\E(n,\,R)$ the natural map sending $F(u,\,v)\mapsto t(u,\,v)$ and $S(u,\,v)\mapsto t(u,\,v)$.
 Then the following facts are true.
-\begin{lmlist}
+\begin{enumerate}
 \item $\St^*(n,\,R,\,I)$ is generated as an abstract group by the set of elements 
       $$\{F(u,\,va)\mid a\in I,\ (u,\,v^t)=(Me_1,\,e_2^tM\inv),\,M\in\E(n,\,R)\};$$
 \item for any $g\in\St^*(n,\,R,\,I)$ one has 
@@ -322,7 +323,7 @@ Then the following facts are true.
       \begin{equation} gS(u,\,v)g\inv=S(\phi(g)u,\,\phi(g\inv)^tv); \end{equation}
 \item there is a ``transpose automorphism'' defined on $\St^*(n, R, I)$ satisfying
       $$F(u,\,v)^t=S(v,\,u),\quad S(u,\,v)^t=F(v,\,u).$$
-\end{lmlist} \end{lm}
+\end{enumerate} \end{lm}
 
 \begin{proof}
 Let $F(u,\,v)$ be an arbitrary generator of the first type and let $M\in\E(n,\,R)$ be such that $F(u,\,v)=F(Me_1,\,M^*\tilde v)$. 
@@ -331,8 +332,8 @@ By \eqref{add4} we have $$F(u,\,v)=\prod\limits_{k\neq1}F(Me_1,\,M^*e_k\tilde v_
 where $\tilde v_k$ stands for $k$-th coordinate of $\tilde v=\sum e_i\tilde v_i$.
 Applying relations \eqref{add5}, \eqref{coinc} we get
 $$S(u,\,v)=\prod\limits_{k\neq1}S(Ne_k\tilde u_k,\,N^*e_1)=\prod\limits_{k\neq1}F(Ne_k,\,N^*e_1\tilde u_k)$$
-and, thus, obtain $(\mathrm{i})$. Obviously, $(\mathrm{ii})$ follows from $(\mathrm{i})$. 
-To prove $(\mathrm{iii})$ it suffices to show that
+and, thus, obtain $(\mathrm{a})$. Obviously, $(\mathrm{b})$ follows from $(\mathrm{a})$. 
+To prove $(\mathrm{c})$ it suffices to show that
 $$F(u,\,v)S(u',\,v')F(u,\,v)\inv=S(t(u,\,v)u',\,t(u,\,v)^*v').$$
 For $S(u',\,v')=\prod_{k\neq 1} F(Ne_k,\,N^*e_1\tilde u_k)$ we have
 \begin{multline*}
@@ -340,7 +341,7 @@ F(u,\,v)S(u',\,v')F(u,\,v)\inv=F(u,\,v)\prod F(Ne_k,\,N^*e_1\tilde u_k)F(u,\,v)\
 =\prod F(t(u,\,v)Ne_k,\,t(u,\,v)^*N^*e_1\tilde u_k)=\\
 =\prod S(t(u,\,v)Ne_k\tilde u_k,\,t(u,\,v)^*N^*e_1)=S(t(u,\,v)u',\,t(u,\,v)^*v').
 \end{multline*}
-Finally, $(\mathrm{iv})$ follows from $(\mathrm{iii})$.
+Finally, $(\mathrm{d})$ follows from $(\mathrm{c})$.
 \end{proof}
 
 Our next goal is to show for a splitting ideal $I\trianglelefteq R$ that the group $\St^*(n,\,R,\,I)$ is isomorphic to $\St(n,\,R,\,I)=\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$.
@@ -366,7 +367,8 @@ The following definition is the ``transpose'' of \cite[3.13]{vdK}.
  where $\sum u^k=u$ and $u^k=c^k \cdot (e_pv_q-e_qv_p)$ for some $c^k\in R$, $1\leq p\neq q\leq n$. \end{df}
 
 Since columns of elementary matrices are unimodular, one can find $w\in R^t$ such that $w^tv=1$.
-It is not hard to check that $u = (w^t\cdot v)\cdot u = \sum_{p<q}u_{pq}$, where $u_{pq} = (u_pw_q - u_qw_p) \cdot (v_qe_p - v_pe_q)\in{}\!R^n$,
+It is not hard to check that \setcounter{equation}{6} \setcounter{lm}{7}
+\begin{equation} u = (w^t\cdot v)\cdot u = \sum_{p<q}u_{pq},\text{ where }u_{pq} = (u_pw_q - u_qw_p) \cdot (v_qe_p - v_pe_q)\in{}\!R^n, \label{eq:canonical}\end{equation}
 therefore $\overline Y(u,\,v)$ is not empty (cf.~\cite[3.1--3.2]{vdK}).
 Obviously, for $x\in\overline Y(u,\,v)$ and $y\in\overline Y(w,\,v)$ one has $xy\in\overline Y(u+w,\,v)$.
 
@@ -477,21 +479,19 @@ The key feature of this new family is that the assumption $u \in\Um(n, B)$ is re
 More formally, we have the following definition.
 %Then, we need generators parametrised by pairs $(u,\,v)$ with $u^tv=0$, $v\in I$, $a^m\in\mathrm I(u)$ for some $m\in\mathbb N$. Such generators are defined in~\cite{Tul}.
 
-\begin{df}[Tulenbaev]
-Let $u$, $v\in B^n$ be such that $v=\sum_{k=1}^Nv_k$ for some $v_1,\ldots,v_N\in B^n$ such that $u^tv_k=0$ and $v_k$ has at least two zero coordinates for all $k$.
-We call such a decomposition of $v$ a \emph{canonical decomposition}.
-Now for $a\in I(u)$ define $X_{u,v}(a) = \prod\limits_{k=1}^Nx(u,\,v_ka)$. 
+\begin{df}[Tulenbaev] \label{df:TulX}
+For $u \in R^n$ we denote by $D(u)$ the set consisting of all $v\in B^n$ such that $v=\sum_{k=1}^Nv_k$ for some $v_1,\ldots,v_N\in B^n$ and that $u^tv_k=0$ and $v_k$ has at least two zero coordinates for all $k$.
+Now for $a\in I(u)$ and $v \in D(u)$ set $X_{u,v}(a) = \prod\limits_{k=1}^Nx(u,\,v_ka)$. 
 \end{df}
-Tulenbaev shows that the factors $x(u,\,v_ka)$ commute~\cite[Lemma~1.1\,e)]{Tul} and that for any other canonical decomposition $v=\sum_{j=1}^Mv'_j$ one has
-$\prod_{k=1}^Nx(u,\,v_ka)=\prod_{j=1}^Mx(u,\,v'_ja)$, see the discussion after \cite[Lemma~1.1]{Tul}.
+Tulenbaev shows that factors $x(u,\,v_ka)$, $1\leq k\leq N$ commute~\cite[Lemma~1.1\,e)]{Tul} and that for any other decomposition $v=\sum_{j=1}^Mv'_j$ one has
+$\prod_{k=1}^Nx(u,\,v_ka)=\prod_{j=1}^Mx(u,\,v'_ja)$, see the discussion following \cite[Lemma~1.1]{Tul}.
 Thus, the elements $X_{u,v}(a)$ are well-defined. Obviously, $\phi(X_{u,v}(a))=t(u,\,va)$.
 
 Notice that Tulenbaev uses different notation for van der Kallen elements, e.\,g. he writes $X_{u,v}$ instead of $X(u,\,v)$ and $X(u,\,v)$ instead of $x(u,\,v)$. 
-We stick to van der Kallen's notation. \textbf{TODO: I thought we use our own notation?}
+We stick to van der Kallen's notation.
 
-\begin{lm}
-\label{xproperties}
-For $u$, $v$, $v'$ and $w\in B^n$, such that $v$ and $v'$ possess a canonical decomposition, $u^tw=0$, $a$, $b\in I(u)$, $c\in B$, $g\in\St(n,\,B)$ the following facts are true.
+\begin{lm} \label{xproperties}
+For $u$, $w\in B^n$, $v, v' \in D(u)$ such that $u^tw=0$, for $a$, $b\in I(u)$, $c\in B$, $g\in\St(n,\,B)$ the following facts are true.
 \begin{enumerate}
 \item $X_{u,vc}(a)=X_{u,v}(ca)$,
 \item $X_{uc,v}(ca)=X_{u,vc^2}(a)$,
@@ -501,71 +501,62 @@ For $u$, $v$, $v'$ and $w\in B^n$, such that $v$ and $v'$ possess a canonical de
 \end{lm}
 
 \begin{proof}
-The statement of a) is obvious from the definition, b) follows from~\cite[Lem.~1.1\,d)]{Tul}, c) is~\cite[Lem.~1.3\,a)]{Tul}, d) is proven for $n\geq5$ in~\cite[Lem.~1.3\,b)]{Tul} and afterwards Tulenbaev makes a remark that for $n=4$ the statement is also true. Indeed, take $z\in B^n$ such that $z^tu=b$ and decompose
-$$
-(z^tu)w=\sum_{i<j}w_{ij},
-$$
-where $w_{ij}=(e_iu_j-e_ju_i)(w_iz_j-w_jz_i)=w_{ji}$. Each $w_{ij}$ is orthogonal to $u$ and has two zero coordinates ($n\geq4$). Thus, $X_{u,wb}(a)=\prod_{i<j}x(u,\,w_{ij}a)$. It is enough to prove the statement of d) for $g=x_{hk}(r)$. If $h\neq i,j$ or $\{h,k\}=\{i,j\}$, $\phi(g)^*w_{ij}a$ still has two zero coordinates. Consider the case $j=h$, $i\neq k$. With~\cite[3.12]{vdK} we get $g\,x(u,\,w_{ij}a)g\inv=x(\phi(g)u,\,\phi(g)^*w_{ij}a)$. Denote $u_{ij}=e_iu_j-e_ju_i$ and $c_{ij}=w_iz_j-w_jz_i$. Using
-$$
-\phi(g)^*u_{ij}=(\phi(g)u)_{ij}+(\phi(g)u)_{ki}\,r
-$$
-and~\cite[3.11]{vdK} one obtains
-$$
-x(\phi(g)u,\,\phi(g)^*w_{ij}a)=x(\phi(g)u,\,(\phi(g)u)_{ij}c_{ij}a)\cdot x(\phi(g)u,\,(\phi(g)u)_{ki}\,rc_{ij}a).
-$$
-Decomposing in such a way each $\phi(g)^*w_{ij}a$ which does not have two zero coordinates we finally get a product from the definition of $X_{\phi(g)u,\phi(g)^*wb}(a)$.
-\end{proof}
+The statement of $(\mathrm a)$ is obvious from the definition, $(\mathrm b)$ follows from~\cite[Lemma~1.1\,d)]{Tul}, $(\mathrm c)$ is exactly the statement of~\cite[Lemma~1.3\,a)]{Tul}.
 
-Siilarly, one can define ``transposed'' version of Tulenbaev's elements $X_{u,v}(a)$.
+The assertion of $(\mathrm d)$ is proven in~\cite[Lemma~1.3\,b)]{Tul} under the assumption $n\geq5$. 
+Afterwards Tulenbaev remarks that the assertion remains true for $n=4$. % We will give a detailed proof of this fact.
+Indeed, take $z\in B^n$ such that $z^tu=b$ and write the canonical decomposition, cf. \eqref{eq:canonical}:
+$$(z^tu)w=\sum_{i<j}c_{ij} u_{ij}, \text{ where } u_{ij}=u_je_i-u_ie_j,\text{ and }c_{ij}=w_iz_j-w_jz_i.$$
+Each $c_{ij}u_{ij}$ is orthogonal to $u$ and because of the assumption $n\geq4$ has at least two zero coordinates.
+Thus, $X_{u,wb}(a)=\prod_{i<j}x(u,\,a c_{ij} u_{ij})$. 
+It is enough to prove the assertion of $(\mathrm d)$ in the special case $g=x_{hk}(r)$.
+If $h\neq i,j$ or $\{h,k\}=\{i,j\}$ the vector $\phi(g)^*ac_{ij}u_{ij}$ still has two zero coordinates.
 
-\begin{df}
-For $u$, $v\in B^n$, $a\in\mathrm I(v)$, and $u_1,\ldots,u_N\in B^n$ such that $u_k^tv=0$, each $u_k$ has at least two zero coordinates and $u=\sum_{k=1}^Nu_k$ define $Y_{u,v}(a)=\prod\limits_{k=1}^Nx(u_ka,\,v)$. Repeating Tulenbaev's argumentation~\cite[p.~3]{Tul} one can show that the definition does not depend on the order of factors and on choice of decomposition of $u$.
+Now consider the case $j=h$, $i\neq k$. 
+By~\cite[3.12]{vdK} one has $$g\,x(u,\,ac_{ij}u_{ij})g\inv=x(\phi(g)u,\,ac_{ij}\,\phi(g)^*u_{ij}).$$
+Set $u' = \phi(g)u$, since
+$\phi(g)^*u_{ij} = t_{kj}(-r) \cdot u_{ij} = u_je_i - u_ie_j + ru_i e_k =u'_{ij}+r\,u'_{ki},$ 
+we obtain from~\cite[3.11]{vdK} that
+$$x(\phi(g)u,\,ac_{ij}\,\phi(g)^* u_{ij})=x\left(u',\,c_{ij}a\,u'_{ij}\right)\cdot x\left(u',\,rc_{ij}a\,u'_{ki}\right).$$
+Decomposing in this fashion each factor $g\,x(u,\,ac_{ij}u_{ij})g$ for which $\phi(g)^*ac_{ij}\, u_{ij}$ does not have two zero coordinates, 
+ we arrive at a product satisfying the requirements of the definition of $X_{\phi(g)u,\phi(g)^*wb}(a)$. \end{proof}
+
+We will also need the ``transposed'' analogue of Tulenbaev's elements $X_{u,v}(a)$.
+\begin{df} \label{df:TulY}
+Let $v\in B^n$, $a\in I(v)$, and $u \in D(v)$, i.\,e. $u = \sum\limits_{i=1}^M u_i$ for some $u_k$ having two zero components such that $v^tu_k=0$.
+Set $Y_{u,v}(a)=\prod_{k=1}^Mx(u_ka,\,v)$. 
+Similarly to \cref{df:TulX} this definition is correct and does not depend neither on the order of factors nor on the choice of decomposition for $u$.
 \end{df}
 
-Now, one can repeat van der Kallen's and Tulenbaev's argumentation to prove transposed version of Lemma~\ref{xproperties}. We leave this to the reader.
-
+One can repeat van der Kallen's and Tulenbaev's arguments and prove the following transposed version of Lemma~\ref{xproperties}.
+We leave the proof of this lemma to the reader.
 \begin{lm}
 \label{yproperties}
 For $u$, $u'$, $w$ and $v\in B^n$, such that $u$ and $u'$ have decomposition as in above definition, $w^tv=0$, $a$, $b\in\mathrm I(v)$, $c\in B$, $g\in\St(n,\,B)$ holds
 \begin{enumerate}
-\item
-$Y_{uc,v}(a)=Y_{u,v}(ca)$,
-\item
-$Y_{u,vc}(ca)=Y_{uc^2,v}(a)$,
-\item
-$Y_{u,v}(a)X_{u',v}(a)=Y_{u+u',v}(a)$,
-\item
-$g\,Y_{wb,v}(a)g\inv=Y_{\phi(g)wb,\phi(g)^*v}(a)$.
+\item $Y_{uc,v}(a)=Y_{u,v}(ca)$,
+\item $Y_{u,vc}(ca)=Y_{uc^2,v}(a)$,
+\item $Y_{u,v}(a)X_{u',v}(a)=Y_{u+u',v}(a)$,
+\item $g\,Y_{wb,v}(a)g\inv=Y_{\phi(g)wb,\phi(g)^*v}(a)$.
 \end{enumerate}
 \end{lm}
 
-Finally, it only remains to show that for a ``good'' pair $(u,\,v)$ elements $X$ and $Y$ coincide.
+
+Finally, it remains to show that for a ``good'' pair $(u,\,v)$ the elements $X$ and $Y$ coincide.
 
 \begin{lm}
 \label{x=y}
-Consider $w$, $u$, $z$, $v$, $x$, $y\in B^n$ $a$, $r\in B$ such that $w^tu=a$, $z^tv=a$, $x^ty=a$ and pairs $(w,\,u)$, $(z,\,v)$ and $(x,\,y)$ are mutually orthogonal. Then 
-$$
-X_{u,v}(ra^3)=Y_{u,v}(ra^3).
-$$
+Let $w$, $u$, $z$, $v$, $x$, $y\in B^n$ be vectors and $a$, $r\in B$ be scalars such that $w^tu=a$, $z^tv=a$, $x^ty=a$.
+Suppose that the pairs $(w,\,u)$, $(z,\,v)$ and $(x,\,y)$ are mutually orthogonal. Then $$ X_{u,v}(ra^3)=Y_{u,v}(ra^3).$$
 \end{lm}
-
 \begin{proof}
-On one hand,
 \begin{multline*}
-[Y_{x,-v}(ra),\,X_{u,y}(a)]=X_{t(x,-vra)u,t(x,-vra)^*y}(a)X_{u,-y}(a)=\\
-=X_{u,y+vra^2}(a)X_{u,-y}(a)=X_{u,v}(ra^3).
-\end{multline*}
-On the other,
-\begin{multline*}
-[Y_{x,-v}(ra),\,X_{u,y}(a)]=Y_{x,-v}(ra)Y_{t(u,ya)x,t(u,ya)^*v}(ra)=\\
-=Y_{-x,v}(ra)Y_{x+ua^2,v}(ra)=Y_{u,v}(ra^3).
+ X_{u,v}(ra^3) = X_{u,y+vra^2}(a)\, X_{u,-y}(a) = X_{t(x,-vra)u,t(x,-vra)^*y}(a)X_{u,-y}(a) = [Y_{x,-v}(ra),\,X_{u,y}(a)] = \\
+ = Y_{x,-v}(ra)\, Y_{t(u,ya)x,t(u,ya)^*v}(ra)= Y_{-x,v}(ra)\, Y_{x+ua^2,v}(ra)=Y_{u,v}(ra^3).\qedhere
 \end{multline*}
 \end{proof}
 
-Now, we are ready to construct a map 
-$
-\mathrm T\colon\St(n,\,B_a,\,I)\rightarrow\St(n,\,B).
-$
+Now, we are ready to construct the desired map $T\colon\St(n,\,B_a,\,I)\rightarrow\St(n,\,B).$
 
 \begin{proof}[Proof of Theorem~\ref{a3map}]
 For $u=Me_1$, $M\in\E(n,\,B_a)$, $v\in I^n$, $u^tv=0$ denote $w=M^*e_1$ (then $wu=1$) and choose $m\in\mathbb N$ such that some $\tilde w$, $\tilde u\in B^n$ localise to $wa^m$ and $ua^m$, $\tilde u^tv=0$ and $\tilde w^t\tilde u=a^{2m}$. Now set $\mathrm T(F(u,\,v))=X_{\tilde u,v/a^{3m}}(a^{2m})$. Lemma~\ref{xproperties}\,a) and b) garantees that this definition does not depend on the choice of $m$ and the lifts $\tilde u$ and $\tilde w$. Similarly, set $\mathrm T(S(u,\,v))=Y_{u/a^{3m},\tilde v}(a^{2m})$. These elements satisfy R1--R3 by Lemmas~\ref{xproperties} and~\ref{yproperties}. For $u=Me_1$, $v=M^*e_2$, $M\in\E(n,\,B_a)$ consider $w=M^*e_1$, $z=Me_2$, $x=Me_3$ and $y=M^*e_3$. Then, multiply these element on appropriate power of $a$, take their lifts to $B$ and apply Lemma~\ref{x=y} to get R4. So that, the map $\mathrm T$ is well-defined.
