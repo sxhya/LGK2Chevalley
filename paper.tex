@@ -185,9 +185,9 @@ $x_{ij}(r)$, $1\leq i\neq j\leq n$, $r\in R\}$ and relations
 \setcounter{equation}{0}
 \renewcommand{\theequation}{S\arabic{equation}}
 \begin{align}
-&x_{ij}(r)x_{ij}(s)=x_{ij}(r+s),\\
-&[x_{ij}(r),\,x_{hk}(s)]=1,\text{ for }h\neq j,\ k\neq i,\\
-&[x_{ij}(r),\,x_{jk}(s)]=x_{ik}(rs).
+&x_{ij}(r)x_{ij}(s)=x_{ij}(r+s), \label{add0}\\
+&[x_{ij}(r),\,x_{hk}(s)]=1,\text{ for }h\neq j,\ k\neq i, \label{ccf1}\\
+&[x_{ij}(r),\,x_{jk}(s)]=x_{ik}(rs) \label{ccf2}.
 \end{align}
 The natural projection $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)$ sends $x_{ij}(r)$ to $t_{ij}(r)$.
 
@@ -205,12 +205,13 @@ This presentation clearly implies that $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)
 Notice that our notation for the generators of $\St(n, R)$ slightly differs from that of~\cite{vdK}, e.\,g. we parametrize elements $X(u, v)$ with two columns
 rather than with one column and one row. Our generator $X(u,v)$ corresponds to van der Kallen's generator $(u, v^t)$.
 
-Recall that an ideal $I\trianglelefteq R$ is called a \emph{splitting ideal} if the canonical projection $R \twoheadrightarrow R/I$ splits as a unital ring morphism.
+Recall that an ideal $I\trianglelefteq R$ is called a \emph{splitting ideal} if the canonical projection $R \twoheadrightarrow R/I$ splits as a unital ring morphism, i.\,e. one has $\pi\sigma=1$.
+$$\xymatrix{0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0}$$
 For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(n,\,R,\,I) = \St(\rA_{n-1}, R, I)$ can be defined as the kernel $\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$.
 
 For a general $I$ the relative Steinberg group $\St(\Phi, R, I)$ is no more a subgroup of $\St(\Phi, R)$ but rather is its central extension.
 For the purposes of the present text it suffices to consider only relative Steinberg groups corresponding to splitting ideals $I$.
-For more information regarding general relative Steinberg groups we refer the reader to \cite[Section~3]{SCh}.
+For more information regarding the general case we refer the reader to \cite[Section~3]{SCh}.
 
 \section{Yet another presentation for $\St(4, R)$.} \label{sec:yap}
 The key ingredient in Tulenbaev's proof of the local-global principle is the construction of the homomorphism $T$ which fits into the following commutative diagram.
@@ -228,7 +229,6 @@ It is clear that the image of $T$ is contained in the image of the top arrow, th
 In order to construct the arrow $T$ Tulenbaev uses the following presentation for the relative Steinberg group, see~\cite[Proposition~1.6]{Tul}. 
 %Assume that $I\trianglelefteq R$ such that a short exact sequence
 %\renewcommand{\theequation}{$\dagger$}
-%\begin{align} \xymatrix{0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0} \end{align} splits, i.e., $\pi\sigma=1$.
 \begin{prop}\label{prop:TulPres}
 For a splitting ideal $I$ and $n\geq 4$ the group $\St(n,\,R,\,I)$ is isomorphic to the group defined by generators
 $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ and the following set of relations
@@ -242,6 +242,31 @@ $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ and the following set 
 Moreover, the group $\St(n, R)$ decomposes into the semidirect product $\St(n,\,R, I)\rtimes \St(n,\,R/I)$.
 \end{prop}
 Here $\Um_{n\times2}(R)$ denotes the set of $n\times2$ \emph{unimodular matrices}, i.\,e. matrices $M$ such that there exists a $2\times n$ matrix $N$ satisfying $NM=\begin{pmatrix}1&0\\0&1\end{pmatrix}$.
+In the definition of the semidirect product the group $\St(n, R/I)$ acts on $\St(n, R, I)$ by conjugation via the splitting map, i.\,e. $g \cdot X(u,\,v) = X(\phi(s(g))u, \phi(s(g))^*v)$.
+
+\begin{proof} For the sake of completeness we present below a more detailed version of Tulenbaev's proof.
+Tulenbaev constructs a pair of mutually inverse maps
+$$\xymatrix{ \St(n, R, I) \rtimes \St(n, R/I) \ar@<0.6ex>[r]^-\varphi &  \ar[l]^-\psi \St(n, R).}$$
+
+Define the map $\psi$ by $\psi(x_{ij}(\xi)) = (X(e_i, (\xi - \pi(\xi)e_j),\ x_{ij}(\pi(\xi)))$. 
+We have to check that $\psi$ preserves the relations \eqref{add0}--\eqref{ccf2}.
+For example, let us check \eqref{ccf1}. 
+First of all, recall that in any semidirect product of groups one can compute the commutator of two elements as follows:
+$$[(a, b), (c, d)] = (a \cdot {}^bc \cdot {}^{bdb^{-1}}a^{-1} \cdot {}^{[b, d]}c^{-1} , [b, d]).$$
+For $\xi\in R$ set $\xi' = \xi - \pi(\xi)$.
+Specializing $a = X(e_i, \xi' e_j)$, $b = x_{ij}(\pi(\xi))$, $c = X(e_j, \eta'e_k)$, $d = x_{jk}(\pi(\eta))$ and using the definition of the conjugation action 
+one computes the commutator $[\psi(x_{ij}(\xi), \psi(x_{jk}(\eta)]$ as follows:
+$$\left(X(e_i, \xi' e_j) \cdot X(e_j + \pi(\xi)e_i, \eta'e_k) \cdot X(e_i, \pi(\eta)\xi' e_k - \xi' e_j) \cdot X(e_j, -\eta'e_k),\ x_{ik}(\pi(\xi\eta))\right).$$
+After applying additivity relations \eqref{add2}, \eqref{add3} and moving the factor $X(e_i, -\xi' e_j)$ to the left hand side of the formula by means of relation \eqref{conj2}
+one gets the following expression
+$$(X(e_j, \eta'e_k) \cdot X(e_i, (\xi' \eta' + \pi(\xi)\eta' + \pi(\eta)\xi')e_k \cdot X(e_j, -\eta'e_k),\ x_{ik}(\pi(\xi\eta)).$$
+Since $\xi'\eta' + \pi(\xi)\eta' + \pi(\eta)\xi' = \xi\eta - \pi(\xi\eta)$ the above expression clearly simplifies to $\psi(x_{ik}(\xi\eta))$, as claimed.
+\end{proof}
+
+\begin{rk} \label{rk:T123'} Notice that from the proof of the above proposition it follows that one could replace the family of relations \eqref{add3}
+in the definition of $\St(n, R, I)$ with the following smaller family \eqref{add3'}.
+\setcounter{equation}{2} \renewcommand{\theequation}{T\arabic{equation}'}
+\begin{equation} X(e_ir+e_j,\,e_k)=X(e_i,\,rae_k)X(e_j,\,ae_k)\,\text{ for }r\in R,\ a\in I\text{ and } i,j,k\text{ distinct}. \label{add3'} \end{equation} \end{rk}
 
 Both ``another presentations'' of van der Kallen and Tulenbaev are given in terms of generators parametrised by pairs of vectors,
  where the first one is ``good'' in some sense  (i.\,e. unimodular or a column of an elementary matrix) while the second one is arbitrary.
@@ -273,10 +298,10 @@ subject to relations
 &F(u,\,v)F(u,\,w)=F(u,\,v+w), \label{add4}\\
 &S(u,\,v)S(w,\,v)=S(u+w,\,v), \label{add5}\\
 &F(u,\,v)F(u',\,v')F(u,\,v)\inv=F(t(u,\,v)u',\,t(v,\,u)\inv v'), \label{conj3} \\
-&F(u,\,va)=S(ua,\,v)\ \forall\,a\in I,\,(u,\,v^t)=(M e_1,\,e_2^t M\inv),\,M\!\in\E(n,\,R) \label{coinc}.
+&F(u,\,va)=S(ua,\,v),\ \text{for all}\ a\in I,\,(u,\,v^t)=(M e_1,\,e_2^t M\inv),\,M\!\in\E(n,\,R) \label{coinc}.
 \end{align}
 \end{df}
-Notice that we only described how a generator $F(u, v)$ acts via conjugation on another generator $F(u',v')$ and omitted three similar relations involving generators $S(u,v)$ of the second type.
+Notice that we only described how a generator $F(u, v)$ acts via conjugation on another generator $F(u',v')$ and have omitted three similar relations involving generators $S(u,v)$ of the second type.
 The reason for this is the following lemma which asserts that the ``missing'' relations will follow automatically from \eqref{add4}--\eqref{coinc}.
 \begin{lm}
 \label{allyouneedisf}
@@ -318,11 +343,17 @@ Our next goal is to show for a splitting ideal $I\trianglelefteq R$ that the gro
 With this end we construct two mutually inverse homomorphisms
 $$\xymatrix{\St^*(n,\,R,\,I)\ar@<0.5ex>[r]^{\iota}&\St(n,\,R,\,I)\ar@<0.5ex>[l]^{\kappa}.}$$
 
-Firstly, we define $\iota$ as a homomorphism to the absolute group (for which we de not need the assumption that $I$ is splitting).
+In order to construct the arrow $\kappa$ we use the presentation from \cref{prop:TulPres}.
+We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
+In view of \cref{rk:T123'} it suffices to check that $F(u,v)$ satisfy the relations \eqref{add2}, \eqref{conj2}, \eqref{add3'}.
+The validity relations \eqref{add2}, \eqref{conj2} is obvious while \eqref{add3'} follows from the following computation:
+$$ F(e_i, rae_k) F(e_j, ae_k) = S(rae_i, e_k) S(ae_j, e_k) = S(a(re_i+e_j), e_k) = F(e_ir+e_j, ae_k). \qedhere $$
+
+As for the map $\iota$ we firstly define it as a homomorphism to the absolute group (for which we de not need the assumption that $I$ is splitting).
 $$\xymatrix{\St^*(n,\,R,\,I)\ar@<0.0ex>[r]^{\iota}&\St(n,\,R).}$$
 
 Clearly, we must map the elements $F(u,\,v)$ to van der Kallen's generators $X(u,\,v)$.
-Now we should find the images for elements $S(u,\,v)$ as well.
+We should find the images for the elements $S(u,\,v)$ as well.
 First of all, recall that van der Kallen in~\cite[3.8--3.10]{vdK} constructs the following elements
 $$x(u,\,v)\in\St(n,\,R),\ u^tv=0,\ u_i=0\,\text{ or }\,v_i=0\,\text{ for some }\,1\leq i\leq n.$$
 The following definition is the ``transpose'' of \cite[3.13]{vdK}.
@@ -363,11 +394,6 @@ Denote the canonical projection $R\epi R/I$ by $\rho$.
 Clearly, the induced group morphism $\rho^*\colon\St(n,\,R)\rightarrow\St(n,\,R/I)$ sends $X(u,\,v)$ to $X(\rho(u),\,\rho(v))$ and $Y(u,\,v)$ to $Y(\rho(u),\,\rho(v))$. 
 Observe that $\E(n,\,R)\epi\E(n,\,R/I)$ is surjective, therefore for $x\in\E(n,\,R)e_1$ one has $\rho(x)\in\E(n,\,R/I)e_1$. 
 From the additivity relations we get that $X(u,\,0)=1=Y(0,\,v)$, hence $\mathrm{Im}(\iota)\subseteq\Ker(\rho^*)=\St(n,\,R,\,I)$, as required. \end{proof}
-
-In order to construct the arrow $\kappa$ we use the presentation from \cref{prop:TulPres}.
-We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
-We have to check that $F(u,v)$ satisfy the relations \eqref{add2}--\eqref{add3}.
-The relations \eqref{add2} and \eqref{conj2} are immediately obvious.
  
 \begin{comment}
 We constructed $\iota$ for an arbitrary $I\trianglelefteq R$. For $I$ a splitting ideal we construct an inverse homomorphism
@@ -421,13 +447,9 @@ $$
 sending $y_{ij}(a)$ to $y^*_{ij}(a)$. Obviously, $\iota\circ\kappa=\mathrm{id}$ (cf.~\cite[3.6\,d)]{vdK}), thus $\kappa$ is injective. Surjectivity of $\kappa$ follows from Lemma~\ref{allyouneedisf}\,a), thus it is an isomorphism and $\iota$ is inverse to it.
 \end{comment}
 
-At this point we obtained the presentation $\St^*(n,\,R,\,I)$ for the $\St(n,\,R,\,I)$ where $I\trianglelefteq R$ is a splitting ideal, $n\geq4$.
-
-Below we obtain the main result of this section, namely, construct a map 
-$$
-\mathrm T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X],\,XR_a[X]),
-$$
-for $n\geq4$. A local-global principle for Steinberg group and centrality of $\mathrm K_2$ formally follow from existance of this map~\cite[Lem.~15, Lem.~16, proof of Th.~2]{SCh}.
+At this point we have demonstrated for $n\geq4$ and a splitting ideal $I$ that $\St^*(n,\,R,\,I)$ and $\St(n,\,R,\,I)$ are isomorphic.
+Now we turn to the main result of this section, namely, we construct a map $$T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X],\,XR_a[X]),$$ for $n\geq4$. 
+A local-global principle for Steinberg group and centrality of $\mathrm K_2$ formally follow from existance of this map~\cite[Lem.~15, Lem.~16, proof of Th.~2]{SCh}.
 
 We work in a more general situation.
 
