@@ -82,7 +82,7 @@
 \newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|}\right|_{#2}}}
 \newcommand*\MapsTo{\xrightarrow[\raisebox{0.25 em}{\smash{\ensuremath{\sim}}}]{}}  
 
-\title{On centrality of orthogonal $\Kt$}
+\title{On centrality of even orthogonal $\Kt$}
 \keywords {Steinberg groups, $K_2$-functor. {\em Mathematical Subject Classification (2010):} 19C09}
 
 \author {Andrei Lavrenov}
@@ -213,10 +213,11 @@ For a general $I$ the relative Steinberg group $\St(\Phi, R, I)$ is no more a su
 For the purposes of the present text it suffices to consider only relative Steinberg groups corresponding to splitting ideals $I$.
 For more information regarding the general case we refer the reader to \cite[Section~3]{SCh}.
 
-\section{Yet another presentation for $\St(4, R)$.} \label{sec:yap}
+\section{Yet another presentation for the relative Steinberg group.} \label{sec:yap}
 The key ingredient in Tulenbaev's proof of the local-global principle is the construction of the homomorphism $T$ which fits into the following commutative diagram.
-$$\xymatrix{\St(n,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d] & \St(n, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
-             \St(n,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T} \ar@{^{(}->}[r] & \St(n, R_a[X])}$$
+\numberwithin{equation}{section}
+\begin{equation} \xymatrix{\St(n,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d] & \St(n, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
+             \St(n,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T} \ar@{^{(}->}[r] & \St(n, R_a[X])} \label{eq:diagram} \end{equation}
 Here $n\geq5$, $a$ is arbitrary nonnilpotent element of $R$ and $\lambda_a^*$ is the morphism induced by the morphism $\lambda_a\colon R \to R_a$ of principal localisation at $a$.
 Notice that $XR_a[X]$ is a splitting ideal for both $R_a[X]$ and $R \ltimes XR_a[X]$.
 It is clear that the image of $T$ is contained in the image of the top arrow, therefore this implies that the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
@@ -242,7 +243,7 @@ $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ and the following set 
 Moreover, the group $\St(n, R)$ decomposes into the semidirect product $\St(n,\,R, I)\rtimes \St(n,\,R/I)$.
 \end{prop}
 Here $\Um_{n\times2}(R)$ denotes the set of $n\times2$ \emph{unimodular matrices}, i.\,e. matrices $M$ such that there exists a $2\times n$ matrix $N$ satisfying $NM=\begin{pmatrix}1&0\\0&1\end{pmatrix}$.
-In the definition of the semidirect product the group $\St(n, R/I)$ acts on $\St(n, R, I)$ by conjugation via the splitting map, i.\,e. $g \cdot X(u,\,v) = X(\phi(s(g))u, \phi(s(g))^*v)$.
+In the definition of the semidirect product the group $\St(n, R/I)$ acts on $\St(n, R, I)$ by conjugation via the splitting map, i.\,e. ${}^g X(u,\,v) = X(\phi(s(g))u, \phi(s(g))^*v)$ for $g \in \St(n, R/I)$.
 
 \begin{proof} For the sake of completeness we present below a more detailed version of Tulenbaev's proof.
 Tulenbaev constructs a pair of mutually inverse maps
@@ -261,6 +262,9 @@ After applying additivity relations \eqref{add2}, \eqref{add3} and moving the fa
 one gets the following expression
 $$(X(e_j, \eta'e_k) \cdot X(e_i, (\xi' \eta' + \pi(\xi)\eta' + \pi(\eta)\xi')e_k \cdot X(e_j, -\eta'e_k),\ x_{ik}(\pi(\xi\eta)).$$
 Since $\xi'\eta' + \pi(\xi)\eta' + \pi(\eta)\xi' = \xi\eta - \pi(\xi\eta)$ the above expression clearly simplifies to $\psi(x_{ik}(\xi\eta))$, as claimed.
+
+It remains to check that the map $\varphi$ given by $\varphi\left((X(u, v), 1)\right) = X(u, v),$ $\varphi\left((1, x_{ij}(\xi))\right) = X(e_i, \sigma(\xi)e_j)$
+is well-defined and inverse to $\psi$.
 \end{proof}
 
 \begin{rk} \label{rk:T123'} Notice that from the proof of the above proposition it follows that one could replace the family of relations \eqref{add3}
@@ -346,7 +350,7 @@ $$\xymatrix{\St^*(n,\,R,\,I)\ar@<0.5ex>[r]^{\iota}&\St(n,\,R,\,I)\ar@<0.5ex>[l]^
 In order to construct the arrow $\kappa$ we use the presentation from \cref{prop:TulPres}.
 We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
 In view of \cref{rk:T123'} it suffices to check that $F(u,v)$ satisfy the relations \eqref{add2}, \eqref{conj2}, \eqref{add3'}.
-The validity relations \eqref{add2}, \eqref{conj2} is obvious while \eqref{add3'} follows from the following computation:
+The validity of relations \eqref{add2}, \eqref{conj2} is obvious while \eqref{add3'} follows from \eqref{add5} and \eqref{coinc}, indeed:
 $$ F(e_i, rae_k) F(e_j, ae_k) = S(rae_i, e_k) S(ae_j, e_k) = S(a(re_i+e_j), e_k) = F(e_ir+e_j, ae_k). \qedhere $$
 
 As for the map $\iota$ we firstly define it as a homomorphism to the absolute group (for which we de not need the assumption that $I$ is splitting).
@@ -384,16 +388,20 @@ $$ Y(-e_3,\,e_2)X(e_1,\,e_3a)Y(-e_3,\,e_2)\inv\cdot X(e_1,\,-e_3a)=X(e_1,\,e_2a)
 $$ Y(-e_3,\,e_2)\cdot\,X(e_1,\,e_3a)Y(e_3,\,e_2)X(e_1,\,e_3a)\inv=Y(e_1a,\,e_2). \qedhere $$
 \end{proof}
 
-The following result is a consequence of the above argument.
-\begin{lm} \label{lm:map-iota}
- For any $I \trianglelefteq R$ there exists a well-defined homomorphism $$\iota\colon\St^*(n,\,R,\,I)\rightarrow\St(n,\,R, I) \subseteq \St(n, R)$$ 
- satisfying the equalities $\iota (F(u,\,v)) = X(u,\,v)$ and $\iota (S(u,\,v)) = Y(u,\,v)$. \end{lm}
-\begin{proof}
-We already know that $\iota$ is well-defined. It suffices to check that the image of $\iota$ is contained in $\St(n,\,R,I)$.
-Denote the canonical projection $R\epi R/I$ by $\rho$.
-Clearly, the induced group morphism $\rho^*\colon\St(n,\,R)\rightarrow\St(n,\,R/I)$ sends $X(u,\,v)$ to $X(\rho(u),\,\rho(v))$ and $Y(u,\,v)$ to $Y(\rho(u),\,\rho(v))$. 
-Observe that $\E(n,\,R)\epi\E(n,\,R/I)$ is surjective, therefore for $x\in\E(n,\,R)e_1$ one has $\rho(x)\in\E(n,\,R/I)e_1$. 
-From the additivity relations we get that $X(u,\,0)=1=Y(0,\,v)$, hence $\mathrm{Im}(\iota)\subseteq\Ker(\rho^*)=\St(n,\,R,\,I)$, as required. \end{proof}
+Since $\pi^*(\iota(F(u, v))) = X(\pi(u),\,0)=1$ and $\pi^*(\iota(S(u,v)) = Y(0,\,\pi(v)) = 1$ we get that $\mathrm{Im}(\iota)\subseteq\Ker(\pi^*)=\St(n,\,R,\,I)$. 
+Thus, we have demonstrated the following result.
+
+\begin{prop} \label{lm:map-iota}
+ For a splitting ideal $I \trianglelefteq R$ and $n\geq 4$ the groups $\St^*(n,\,R,\,I)$ and $\St(n,\,R, I)$ are isomorphic.
+% there exists a well-defined homomorphism $$\iota\colon\St^*(n,\,R,\,I)\rightarrow\St(n,\,R, I) \subseteq \St(n, R)$$ 
+% satisfying the equalities $\iota (F(u,\,v)) = X(u,\,v)$ and $\iota (S(u,\,v)) = Y(u,\,v)$. 
+\end{prop}
+%\begin{proof}
+%We already know that $\iota$ is well-defined. It suffices to check that the image of $\iota$ is contained in $\St(n,\,R,I)$.
+%Denote the canonical projection $R\epi R/I$ by $\rho$.
+%Clearly, the induced group morphism $\rho^*\colon\St(n,\,R)\rightarrow\St(n,\,R/I)$ sends $X(u,\,v)$ to $X(\rho(u),\,\rho(v))$ and $Y(u,\,v)$ to $Y(\rho(u),\,\rho(v))$. 
+%Observe that $\E(n,\,R)\epi\E(n,\,R/I)$ is surjective, therefore for $x\in\E(n,\,R)e_1$ one has $\rho(x)\in\E(n,\,R/I)e_1$. 
+%, as required. \end{proof}
  
 \begin{comment}
 We constructed $\iota$ for an arbitrary $I\trianglelefteq R$. For $I$ a splitting ideal we construct an inverse homomorphism
@@ -447,27 +455,19 @@ $$
 sending $y_{ij}(a)$ to $y^*_{ij}(a)$. Obviously, $\iota\circ\kappa=\mathrm{id}$ (cf.~\cite[3.6\,d)]{vdK}), thus $\kappa$ is injective. Surjectivity of $\kappa$ follows from Lemma~\ref{allyouneedisf}\,a), thus it is an isomorphism and $\iota$ is inverse to it.
 \end{comment}
 
-At this point we have demonstrated for $n\geq4$ and a splitting ideal $I$ that $\St^*(n,\,R,\,I)$ and $\St(n,\,R,\,I)$ are isomorphic.
-Now we turn to the main result of this section, namely, we construct a map $$T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X],\,XR_a[X]),$$ for $n\geq4$. 
-A local-global principle for Steinberg group and centrality of $\mathrm K_2$ formally follow from existance of this map~\cite[Lem.~15, Lem.~16, proof of Th.~2]{SCh}.
+\section{The local-global principle for $\Kt$.} \label{sec:lgp}
+%At this point we have demonstrated for $n\geq4$ and a splitting ideal $I$ that $\St^*(n,\,R,\,I)$ and $\St(n,\,R,\,I)$ are isomorphic.
+Now we turn to the main result of this paper, namely, we construct the map $$T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X]),\ \text{ for} n\geq4.$$ 
+The local-global principle for the Steinberg group and centrality of $\mathrm K_2$ will formally follow from the existence of this map, see~\cite[Lemmas~15--16, and the proof of Theorem~2]{SCh}.
 
-We work in a more general situation.
+We will prove a somewhat more general result. Let $B$ be a commutative unital ring.
+A $B$-module $M$ is called \emph{$r$-divisible} if for every $m\in M$ there exists $m'\in M$ such that $rm' = m$ (we denote such $m'$ by $\frac{m}{a}$).
+Clearly, $M$ is $a$-divisible if and only if the morphism of principal localization $\lambda_a\colon M \to M_a$ is an isomorphism.
 
-\begin{tm}
-\label{a3map}
-Let $B$ be a ring, $I\trianglelefteq B$, $a\in B$ such that $\forall\,x\in I$ there exists a unique $y\in I$ such that $ya=x$ {\rm(}we denote this $y$ by $\frac xa$, elements $\frac x{a^m}$ are also well defined{\rm)}. This requirement is equivalent to say that the principle localisation $\lambda_a\colon I\rightarrow I_a$ of ideal $I$ is an isomorphism. Then there exists a map
-$$
-\mathrm T\colon\St(n,\,B_a,\,I)\rightarrow\St(n,\,B)
-$$
-making the diagram
-$$
-\xymatrix{
-\St^*(2n,\,B,\,I)\ar@<-0.0ex>[rr]^{\iota}\ar@<-0.0ex>[d]_{\lambda_{a}^*}&&\St(2n,\,B)\ar@<-0.0ex>[d]^{\lambda_{a}^*}\\
-\St^*(2n,\,B_a,\,I)\ar@<-0.0ex>[rr]_{\iota}\ar@{-->}[rru]_{\mathrm T}&&\St(2n,\,B_a)
-}
-$$
-commutative.
-\end{tm}
+\begin{tm} \label{a3map} Let $B$ be a ring, $a\in B$ and let $I$ be an ideal $B$ that is $a$-divisible.
+Then there exists a map $T\colon\St(n,\,B_a,\,I)\rightarrow\St(n,\,B)$ which makes the following diagram commute.
+$$\xymatrix{ \St^*(2n,\,B,\,I)\ar@<-0.0ex>[rr]^{\iota}\ar@<-0.0ex>[d]_{\lambda_{a}^*}&&\St(2n,\,B)\ar@<-0.0ex>[d]^{\lambda_{a}^*}\\
+             \St^*(2n,\,B_a,\,I)\ar@<-0.0ex>[rr]_{\iota}\ar@{-->}[rru]_{T}&&\St(2n,\,B_a)}$$ \end{tm}
 
 To prove this theorem we need to find some elements ``$X(u,\,v)$'' inside $\St(n,\,B)$ for $u\in\E(n,\,B_a)e_1$, $v\in I$. The idea is the following. Say $a$ is not a zero divisor, then $ua^m\in B$ for some $m$ and we will construct some element ``$X(ua^m,\,va^{-m})$''. One can not garantee that $ua^m\in\E(n,\,B)e_1a^k$, however, the ideal generated by entries of $ua^m$ contains some power of $a$ (this is equivalent to say that $ua^m$ becomes unimodular after the principle localisation in $a$). Denote $\mathrm I(u)$ the ideal generated by entries of $u\in R^n$, $\mathrm I(u)=\sum\limits_{k=1}^nu_kR$. Then, we need generators parametrised by pairs $(u,\,v)$ with $u^tv=0$, $v\in I$, $a^m\in\mathrm I(u)$ for some $m\in\mathbb N$. Such generators are defined in~\cite{Tul}.
 
