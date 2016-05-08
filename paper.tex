@@ -75,6 +75,7 @@
 \newcommand{\rE}{\mathsf{E}}
 \newcommand{\rF}{\mathsf{F}}
 \newcommand{\rG}{\mathsf{G}}
+\DeclareRobustCommand{\VAN}[2]{#1}
 
 \renewcommand{\labelenumi}{\theenumi{\rm)}}
 \renewcommand{\theenumi}{\alph{enumi}}
@@ -123,24 +124,26 @@ Thus, similarly to the definition of algebraic $\mathrm{SK}_1$ and $\Kt$-functor
 $$\xymatrix{1 \ar[r] & \Kt(\Phi, R) \ar[r] & \St(\Phi, R) \ar[r] & \GG(\Phi, R) \ar[r] & \Ko(\Phi, R) \ar[r] & 1.}$$
 
 It is a classical theorem of M.~Kervaire and R.~Steinberg that the stable Steinberg group $\St(R)$ is the universal central extension of $\E(R)$ for arbitrary $R$, see \cite[Theorem~III.5.5]{Kbook}.
-The unstable analogue of the ``universality'' part of this theorem was obtained by M.~Stein and W.~van~der~Kallen in 1970's, see \cite{St1, KaS}.
-However, until recently, the analogue of the ``centrality'' part of the theorem was only known for $\Phi=\rA_\ell$, $\ell\geq 4$, see~\cite[Corollary~2]{vdK} and for other classical $\Phi$ ``in the stable range'',
-i.\,e. when the dimension of $R$ is suffiently small with respect to the rank of $\Phi$, see~\cite[Corollary~3.4]{St78}.
+The unstable analogue of the ``universality'' part of this theorem was proved by M.~Stein and W.~van~der~Kallen for $\Phi$ of rank $\geq 5$ (or even $\geq 4$ for $\Phi$ of type $\rA_\ell, \rB_\ell, \rC_\ell$, see \cite{St1, KaS})
+However, until recently, the analogue of the ``centrality'' part was only known for $\Phi=\rA_\ell$, $\ell\geq 3$, see~\cite[Corollary~2]{vdK} and for other classical $\Phi$ ``in the stable range'',
+i.\,e. when the dimension of $R$ is suffiently small in comparison with the rank of $\Phi$, see~\cite[Corollary~3.4]{St78}.
 
 Recently the authors of this paper have established the centrality of $\Kt(\rC_\ell, R)$ ($\ell\geq 3$) and $\Kt(\rE_\ell, R)$ ($\ell=6,7,8$) for arbitrary commutative ring $R$, see \cite{Lav, SCh}.
 In turn, the key result of this paper is the following theorem.
 \begin{tm}\label{tm:centrality}  Let $R$ be an arbitrary commutative ring and $\ell\geq 4$ then 
 the group $\Kt(\rD_\ell, R)$ is a central subgroup of $\St(\rD_\ell, R)$. \end{tm}
 
-\cref{tm:centrality} follows from the following local-global principle.
-We refer the reader to the proof ~\cite[Theorem~]{SCh}
+The above theorem is a corollary of the following local-global principle (cf. with the proof of~\cite[Theorem~1]{SCh}).
 \begin{tm}\label{tm:lg-principle} Let $\Phi$ be an irreducible simply-laced root system of rank $\geq 3$ and $R$ be arbitrary commutative ring.
 Then an element $g\in\St(\Phi,\,R[X])$ satisfying $g(0)=1\in\St(\Phi,\,R)$ is trivial in $\St(\Phi,\,R[X])$
 if and only if the images $g_M\in\St(\Phi,\,R_M[X])$ of $g$ under localisation morphisms $R\to R_M$ are trivial for all maximal ideals $M\trianglelefteq R$. \end{tm} 
 
-The special case $\Phi=\rA_\ell$, $\ell\geq 4$ of \cref{tm:lg-principle} was demonstrated for the first time by Tulenbaev, see~\cite[Theorem~2.1]{Tul},
-while cases $\Phi=\rC_\ell$, $\ell\geq 3$ and $\Phi=\rE_\ell$, $\ell=6,7,8$ have been analyzed in \cite{Lav2} and \cite{SCh}, respectively.
+\cref{tm:lg-principle} includes as a special case both~\cite[Theorem~2.1]{Tul} and~\cite[Theorem~2]{SCh} in which
+the cases $\Phi=\rA_\ell$, $\ell\geq 4$, $\Phi=\rE_\ell$, $\ell=6,7,8$ were studied, respectively.
 The special cases $\Phi=\rA_3$ and $\Phi=\rD_\ell$, $\ell\geq 4$ of \cref{tm:lg-principle} are new and have not been known before.
+
+As a yet another motivation for ??? we mention that a symplectic counterpart of~\cref{lg-principle} was demonstrated by
+the first-named author $\Phi=\rC_\ell$ starting from $\ell\geq 3$.
 
 There are known counterexamples to centrality of $\Kt$ in rank $2$ (see~\cite{W}).
 This shows that our assumption on the rank of $\Phi$ in \cref{tm:lg-principle} is strict.
@@ -222,9 +225,10 @@ The key ingredient in Tulenbaev's proof of the local-global principle is the con
 \numberwithin{equation}{section}
 \begin{equation} \xymatrix{\St(n,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d]_-{\lambda_a^*} & \St(n, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
              \St(n,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T} \ar@{^{(}->}[r] & \St(n, R_a[X])} \label{eq:diagram} \end{equation}
-Here $n\geq5$, $a$ is arbitrary non-nilpotent element of $R$ and $\lambda_a^*$ is the morphism induced by the morphism $\lambda_a\colon R \to R_a$ of principal localisation (i.\,e. localisation by the powers of $a$).
+Here $n\geq5$, $a$ denotes an arbitrary non-nilpotent element of $R$ and $\lambda_a^*$ is the morphism of Steinberg groups induced by the morphism 
+$\lambda_a\colon R \to R_a$ of localisation by the powers of $a$.
 Notice that $XR_a[X]$ is a splitting ideal for both $R_a[X]$ and $R \ltimes XR_a[X]$.
-It is clear that the image of $T$ is contained in the image of the top arrow, therefore this implies that the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
+It is clear that the image of $T$ is contained in the image of the top arrow, therefore the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
 %This $T$ is an inverse to a map induced by localisation, so that constructing $\mathrm T$ may be treated
 %as a proof of excision property for Steinberg group in this very particular situation.
 
@@ -595,7 +599,7 @@ Thus, the map $T$ is well-defined.
 
 Commutativity of the diagram~\eqref{eq:a3diag} follows directly from the definitions of elements $X(u,\,v)$, $Y(u,\,v)$ and $X_{u,v}(a)$, $Y_{u,v}(a)$. \end{proof}
 
-%\printbibliography
+\printbibliography
 
 \end{document}
 
