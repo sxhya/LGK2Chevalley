@@ -123,10 +123,10 @@ By a theorem of Taddei (see~\cite{Ta}) the elementary group $\E(\Phi, R)$ is a n
 Thus, similarly to the definition of algebraic $\mathrm{SK}_1$ and $\Kt$-functors, one can define the groups $\Ko(\Phi, R)$, $\Kt(\Phi, R)$ as the cokernel and kernel of $\phi$:
 $$\xymatrix{1 \ar[r] & \Kt(\Phi, R) \ar[r] & \St(\Phi, R) \ar[r] & \GG(\Phi, R) \ar[r] & \Ko(\Phi, R) \ar[r] & 1.}$$
 
-It is a classical theorem of M.~Kervaire and R.~Steinberg that the stable Steinberg group $\St(R)$ is the universal central extension of $\E(R)$ for arbitrary $R$, see \cite[Theorem~III.5.5]{Kbook}.
-The unstable analogue of the ``universality'' part of this theorem was obtained by M.~Stein and W.~van~der~Kallen for $\Phi$ of rank $\ell \geq 5$ (or even $\ell \geq 4$ for $\Phi$ of type $\rA_\ell, \rB_\ell, \rC_\ell$, see \cite{St1, KaS})
-However, until recently, the analogue of the ``centrality'' part was only known in the case of a general $R$ for $\Phi=\rA_\ell$, $\ell\geq 3$ see~\cite[Corollary~2]{vdK}.
-The best result for other classical $\Phi$ was that the centrality holds ``in the stable range'',
+It is a classical theorem of M.~Kervaire and R.~Steinberg that the stable Steinberg group $\St(R)$ is the universal central extension of $\E(R)$, see \cite[Theorem~III.5.5]{Kbook}.
+The unstable analogue of the ``universality'' part of this theorem is known since 1970's from the works of M.~Stein and W.~van~der~Kallen for $\Phi$ with rank $\ell \geq 5$ (or even $\ell \geq 4$ for $\Phi=\rA_\ell, \rB_\ell, \rC_\ell$), see \cite{St1, KaS}.
+However, until recently, the analogue of the ``centrality'' part was only known in the special case $\Phi=\rA_\ell$, $\ell\geq 3$ see~\cite[Corollary~2]{vdK}.
+The best known result for other classical $\Phi$ was that the centrality holds ``in the stable range'',
 i.\,e. when the dimension of $R$ is suffiently small as compared to the rank of $\Phi$, see~\cite[Corollary~3.4]{St78}.
 
 Recently the authors of this paper have established the centrality of $\Kt(\rC_\ell, R)$ ($\ell\geq 3$) and $\Kt(\rE_\ell, R)$ ($\ell=6,7,8$) for arbitrary commutative ring $R$, see \cite{Lav, SCh}.
@@ -134,23 +134,28 @@ In turn, the key result of this paper is the following theorem.
 \begin{tm}[``Centrality of $\Kt$''] \label{tm:centrality}  Let $R$ be an arbitrary commutative ring.
 Then for $\ell\geq 4$ the group $\Kt(\rD_\ell, R)$ is a central subgroup of $\St(\rD_\ell, R)$. \end{tm}
 
-We claim that \cref{tm:centrality} is a corollary of $\Kt$-analogue of Quillen's local-global principle,
+Centrality of $\Kt$ is a corollary of the following variant of Quillen's local-global principle,
 very much in the same fashion as the normality theorem for the elementary subgroup is a corollary of Quillen's local-global principle for $\Ko$.
-The proof of this claim can be found in \cite{SCh}
-For the proof of this claim we refer the reader to the proof of \cite[Theorem~1]{SCh} which works in our situation verbatim.
-%The above theorem is a corollary of the following local-global principle (cf. with the proof of~\cite[Theorem~1]{SCh}).
 \begin{tm}[``Quillen's LG-principle for $\Kt$''] \label{tm:lg-principle} 
 Let $\Phi$ be an irreducible simply-laced root system of rank $\geq 3$ and $R$ be arbitrary commutative ring.
 Then an element $g\in\St(\Phi,\,R[X])$ satisfying $g(0)=1\in\St(\Phi,\,R)$ is trivial in $\St(\Phi,\,R[X])$
-if and only if the images $\lambda^*(g)\in\St(\Phi,\,R_M[X])$ of $g$ under localisation maps $\lambda_M\colonR\to R_M$ are trivial for all maximal ideals $M\trianglelefteq R$. \end{tm}
-The proof for the assertion that \cref{tm:lg-principle} follows from \cref{tm:centrality} is a verbatim repetion of the proof of \cite[Theorem~1]{SCh}.
+if and only if the images $\lambda_M^*(g)\in\St(\Phi,\,R_M[X])$ of $g$ under localisation maps $\lambda_M\colonR\to R_M$ are trivial for all maximal ideals $M\trianglelefteq R$. \end{tm}
+For the proof of the claim that \cref{tm:lg-principle} follows from \cref{tm:centrality} we refer the reader to the proof of Theorem~1 in \cite{SCh} which works verbatim in our case.
 
-\cref{tm:lg-principle} includes as a special case both~\cite[Theorem~2.1]{Tul} and~\cite[Theorem~2]{SCh} in which
-the cases $\Phi=\rA_\ell$, $\ell\geq 4$, $\Phi=\rE_\ell$, $\ell=6,7,8$ were studied, respectively.
-The special cases $\Phi=\rA_3$ and $\Phi=\rD_\ell$, $\ell\geq 4$ of \cref{tm:lg-principle} are new and have not been known before.
+The assertion of \cref{tm:lg-principle} was known previously in the following two situations:
+\begin{itemize}
+ \item in the case $\Phi=\rA_\ell$, $\ell\geq 4$ it was proved by Tulenbaev, the proof see~\cite[Theorem~2.1]{Tul}
+ \item $\Phi=\rE_\ell$, $\ell=6,7,8$ and the second-named author
+\end{itemize}
+Thus, the special cases $\Phi=\rA_3$ and $\Phi=\rD_\ell$, $\ell\geq 4$ of \cref{tm:lg-principle} are new and have not been known before.
+We also notice that a symplectic counterpart of~\cref{lg-principle} was demonstrated recently by the first-named author.
 
-As a yet another motivation for ??? we mention that a symplectic counterpart of~\cref{lg-principle} was demonstrated by
-the first-named author $\Phi=\rC_\ell$ starting from $\ell\geq 3$.
+On the other hand, the special case 
+includes as a special case both and~\cite[Theorem~2]{SCh} in which
+the cases were studied, respectively.
+
+
+As a yet another motivation for ??? we mention that 
 
 There are known counterexamples to centrality of $\Kt$ in rank $2$ (see~\cite{W}).
 This shows that our assumption on the rank of $\Phi$ in \cref{tm:lg-principle} is strict.
