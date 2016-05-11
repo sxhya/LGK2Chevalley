@@ -134,31 +134,25 @@ In turn, the key result of this paper is the following theorem.
 \begin{tm}[``Centrality of $\Kt$''] \label{tm:centrality}  Let $R$ be an arbitrary commutative ring.
 Then for $\ell\geq 4$ the group $\Kt(\rD_\ell, R)$ is a central subgroup of $\St(\rD_\ell, R)$. \end{tm}
 
-Centrality of $\Kt$ is a corollary of the following variant of Quillen's local-global principle,
-very much in the same fashion as the normality theorem for the elementary subgroup is a corollary of Quillen's local-global principle for $\Ko$.
+Centrality of $\Kt$ follows the following the following analogue of Quillen's local-global principle,
+very much in the same fashion as the normality theorem for the elementary subgroup follows from Quillen's local-global principle for $\Ko$, cf.~\cite[Theorem~3.1]{Basu05}.
 \begin{tm}[``Quillen's LG-principle for $\Kt$''] \label{tm:lg-principle} 
 Let $\Phi$ be an irreducible simply-laced root system of rank $\geq 3$ and $R$ be arbitrary commutative ring.
 Then an element $g\in\St(\Phi,\,R[X])$ satisfying $g(0)=1\in\St(\Phi,\,R)$ is trivial in $\St(\Phi,\,R[X])$
-if and only if the images $\lambda_M^*(g)\in\St(\Phi,\,R_M[X])$ of $g$ under localisation maps $\lambda_M\colonR\to R_M$ are trivial for all maximal ideals $M\trianglelefteq R$. \end{tm}
-For the proof of the claim that \cref{tm:lg-principle} follows from \cref{tm:centrality} we refer the reader to the proof of Theorem~1 in \cite{SCh} which works verbatim in our case.
+if and only if the images $\lambda_M^*(g)\in\St(\Phi,\,R_M[X])$ of $g$ under localisation maps $\lambda_M\colon R\to R_M$ are trivial for all maximal ideals $M\trianglelefteq R$. \end{tm}
+For the proof of the claim that \cref{tm:lg-principle} follows from \cref{tm:centrality} we refer the reader to the proof of Theorem~1 in \cite{SCh} (which works verbatim in our situation).
 
-The assertion of \cref{tm:lg-principle} was known previously in the following two situations:
+\cref{tm:lg-principle} was known previously in the following two special cases.
 \begin{itemize}
- \item in the case $\Phi=\rA_\ell$, $\ell\geq 4$ it was proved by Tulenbaev, the proof see~\cite[Theorem~2.1]{Tul}
- \item $\Phi=\rE_\ell$, $\ell=6,7,8$ and the second-named author
+ \item In the case $\Phi=\rA_\ell$, $\ell\geq 4$ it was proved by Tulenbaev, see~\cite[Theorem~2.1]{Tul}. 
+ \item In the case $\Phi=\rE_\ell$, $\ell=6,7,8$ it was obtained in~\cite{SCh} by the second-named author.
 \end{itemize}
 Thus, the special cases $\Phi=\rA_3$ and $\Phi=\rD_\ell$, $\ell\geq 4$ of \cref{tm:lg-principle} are new and have not been known before.
-We also notice that a symplectic counterpart of~\cref{lg-principle} was demonstrated recently by the first-named author.
 
-On the other hand, the special case 
-includes as a special case both and~\cite[Theorem~2]{SCh} in which
-the cases were studied, respectively.
+Notice that the first-named author has recently established the local-global principle for $\Kt(\rC_\ell, R)$ under the assumption $\ell\geq 3$.
+The main shortcoming of Tulenbaev's proof is that it left the case $\Phi=\rA_3$ unsettled.
 
-
-As a yet another motivation for ??? we mention that 
-
-There are known counterexamples to centrality of $\Kt$ in rank $2$ (see~\cite{W}).
-This shows that our assumption on the rank of $\Phi$ in \cref{tm:lg-principle} is strict.
+Since there are known counterexamples to centrality of $\Kt$ in the rank $2$ case (see~\cite{W}), our assumption on the rank of $\Phi$ in \cref{tm:lg-principle} can not be weakened.
 
 Compare \cref{tm:lg-principle} with the local-global principle for $\Ko$ which states that an element of the congruence subgroup $g\in \GG(\Phi,\,R[X], XR[X])$ is elementary
 (i.\,e. lies in $\E(\Phi, R[X])$) if and only if $g_M=1\in\E(\Phi,\,R_M)$ for all maximal ideals $M \trianglelefteq R$.
