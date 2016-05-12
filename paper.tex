@@ -76,6 +76,8 @@
 \newcommand{\rF}{\mathsf{F}}
 \newcommand{\rG}{\mathsf{G}}
 \DeclareRobustCommand{\VAN}[2]{#1}
+\newcommand{\eval}[4]{ev_{\scriptstyle \left[\frac{#2[#1] \rightarrow #3}{#1 \mapsto #4}\right]}}
+\newcommand{\ev}[3]{\eval{t}{#1}{#2}{#3}}
 
 \renewcommand{\labelenumi}{\theenumi{\rm)}}
 \renewcommand{\theenumi}{\alph{enumi}}
@@ -140,7 +142,6 @@ very much in the same fashion as the normality theorem for the elementary subgro
 Let $\Phi$ be an irreducible simply-laced root system of rank $\geq 3$ and $R$ be arbitrary commutative ring.
 Then an element $g\in\St(\Phi,\,R[X])$ satisfying $g(0)=1\in\St(\Phi,\,R)$ is trivial in $\St(\Phi,\,R[X])$
 if and only if the images $\lambda_M^*(g)\in\St(\Phi,\,R_M[X])$ of $g$ under localisation maps $\lambda_M\colon R\to R_M$ are trivial for all maximal ideals $M\trianglelefteq R$. \end{tm}
-For the proof of the claim that \cref{tm:lg-principle} follows from \cref{tm:centrality} we refer the reader to \cite{SCh} (cf. with the proof of Theorem~1 ibid.).
 
 In the special case $\Phi=\rA_\ell$, $\ell\geq 4$ the assertion of \cref{tm:lg-principle} was obtained by Tulenbaev, see~\cite[Theorem~2.1]{Tul}.
 Despite the fact that the key ingredient in Tulenbaev's proof (``another presentation'' of the Steinberg group) is available for $\Phi=\rA_3$, Tulenbaev's proof does not work in this case for technical reasons.
@@ -149,9 +150,9 @@ Thus, \cref{tm:lg-principle} contains two cases that have not been previously kn
 We also note that recently the first-named author has obtained an analogue of \cref{tm:lg-principle} for $\Kt(\rC_\ell, R)$ under the assumption $\ell\geq 3$.
 
 The rest of the paper is organised as follows. 
-In \cref{sec:patching} we explain how \cref{tm:lg-principle} can be reduced to its own special case $\Phi=\rA_3$ by means of the patching technique of~\cite{SCh}.
-Next, in \cref{sec:yap} we describe a new ``transpose-symmetric'' presentation for the relative linear Steinberg group. 
-Finally, we use this presentation in~\cref{sec:lgp} where we prove \cref{tm:lg-principle} in the case $\Phi=\rA_3$.
+After introducing the preliminaries we explain in \cref{sec:patching} how the patching technique of~\cite{SCh} allows one to reduce \cref{tm:lg-principle} to the special case $\Phi=\rA_3$.
+Next, in \cref{sec:yap} we describe a new ``transpose-symmetric'' presentation for the relative linear Steinberg group.
+Finally, this presentation is used in~\cref{sec:lgp} to prove \cref{tm:lg-principle} in the case $\Phi=\rA_3$.
 %It mimics the standart vector representation of $\SL(n,\,R)$, therefore in the first section we use representations and corresponding vector notation. 
 %Finally, in \cref{sec:patching} we derive our principal results from this special case and the amalgamation theorem for relative Steinberg groups from~\cite{SCh}.
 %There we switch to the root notation.
@@ -208,21 +209,42 @@ Our generator $X(u,v)$ corresponds to van der Kallen's generator $X(u, v^t)$.
 
 Recall that an ideal $I\trianglelefteq R$ is called a \emph{splitting ideal} if the canonical projection $R \twoheadrightarrow R/I$ splits as a unital ring morphism, i.\,e. one has $\pi\sigma=1$.
 $$\xymatrix{0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0}$$
-For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(n,\,R,\,I) = \St(\rA_{n-1}, R, I)$ can be defined as the kernel $\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$.
+For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(\Phi, R, I)$ can be defined as the kernel $\Ker\big(\St(\Phi,\,R)\epi\St(\Phi,\,R/I)\big)$.
 
 For a general $I$ the relative Steinberg group $\St(\Phi, R, I)$ is no more a subgroup of $\St(\Phi, R)$ and should be defined as a central extension of the above kernel.
 For the purposes of the present text it suffices to consider only relative Steinberg groups corresponding to splitting ideals.
 For more information regarding the general case we refer the reader to \cite[Section~3]{SCh}.
 
 \section{Main reduction} \label{sec:patching}
-The key ingredient in Tulenbaev's proof of the local-global principle is the construction of the homomorphism $T$ which fits into the following commutative diagram.
+First of all, we remind the reader the way how \cref{tm:lg-principle} is proved in~\cite{Tul,SCh}.
+
+\begin{df}
+We say that the Steinberg group functor $\St(\Phi, -)$ satisfies {\it Tulenbaev lifting property} if for any ring $R$ and any non-nilpotent element $a \in R$
+there exists a map $T$ which fits into the following commutative diagram.
 \numberwithin{equation}{section}
-\begin{equation} \xymatrix{\St(n,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d]_-{\lambda_a^*} & \St(n, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
-             \St(n,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T} \ar@{^{(}->}[r] & \St(n, R_a[X])} \label{eq:diagram} \end{equation}
-Here $n\geq5$, $a$ denotes an arbitrary non-nilpotent element of $R$ and $\lambda_a^*$ is the morphism of Steinberg groups induced by the morphism 
-$\lambda_a\colon R \to R_a$ of localisation by the powers of $a$.
+\setcounter{equation}{1}
+\begin{equation} \xymatrix{\St(\Phi,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d]_-{\lambda_a^*} & \St(\Phi, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
+                           \St(\Phi,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T} \ar@{^{(}->}[r] & \St(\Phi, R_a[X])} \label{eq:diagram} \end{equation}
+Here $\lambda_a^*$ denotes the morphism of Steinberg groups induced by the morphism $\lambda_a\colon R \to R_a$ of localisation by the powers of $a$.                           
 Notice that $XR_a[X]$ is a splitting ideal for both $R_a[X]$ and $R \ltimes XR_a[X]$.
-It is clear that the image of $T$ is contained in the image of the top arrow, therefore the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
+\end{df}
+It is clear that the image of $T$ is contained in the image of the top arrow, therefore, Tulenbaev lifting property implies that the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
+
+We claim that the main results of the paper follow from Tulenbaev's lifting property.
+\begin{prop} Consider the following statements.
+\begin{enumerate}
+ \item The Steinberg group functor $\St(\Phi, -)$ satisfies Tulenbaev lifting property;
+ \item A dilation principle holds for $\St(\Phi, -)$, i.\,e. if $g\in\St(\Phi, A[X], XA[X])$ is such that $\lambda_a^*(h) = 1 \in \St(\Phi, R_a[X])$ then
+       for sufficiently large $n$ one has $ev_{X = a^n Y}^*(h) = 1 \in \St(\Phi, A[Y])$, where $ev_{X=a^n Y}$ denotes the unique $R$-algebra morphism $R[X]\to R[Y]$ sending $X$ to $a^nY$;
+ \item A local global principle for $\Kt$ holds for $\St(\Phi, -)$;
+ \item Centrality of $\Kt$ holds for $\St(\Phi, -)$.
+\end{enumerate}
+Then for any irreducible $\Phi$ of rank $\geq 2$ there are implications $a) \implies b) \implies c) \implies d)$. \end{prop}
+\begin{proof} The specified implications are contained in the proofs of Lemma~15, Theorem~2 and Theorem~1 of \cite{SCh}, respectively. \end{proof}
+     
+We now discuss how Tulenbaev's lifting property is proved.
+
+
 %This $T$ is an inverse to a map induced by localisation, so that constructing $\mathrm T$ may be treated
 %as a proof of excision property for Steinberg group in this very particular situation.
 
@@ -482,7 +504,7 @@ sending $y_{ij}(a)$ to $y^*_{ij}(a)$.
 \section{The local-global principle for $\Kt$.} \label{sec:lgp}
 %At this point we have demonstrated for $n\geq4$ and a splitting ideal $I$ that $\St^*(n,\,R,\,I)$ and $\St(n,\,R,\,I)$ are isomorphic.
 Now we turn to the main result of this paper, namely, we construct for $n\geq 4$ the map $$T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X]),$$ that fits into the diagram \eqref{eq:diagram}.
-The local-global principle for the Steinberg group and centrality of $\mathrm K_2$ will formally follow from the existence of this map, see~\cite[Lemmas~15--16, and the proof of Theorem~2]{SCh}.
+BLAH-BLAH-BLAH
 
 We will prove a somewhat more general result. Let $B$ be a commutative unital ring.
 We call an ideal $I$ of $B$ \emph{uniquely $r$-divisible} if for every $m\in I$ there exists only one $m'\in I$ such that $rm' = m$ (we denote such $m'$ by $\frac{m}{r}$).
