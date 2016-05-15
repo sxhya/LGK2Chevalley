@@ -159,7 +159,7 @@ Finally, this presentation is used in~\cref{sec:lgp} to prove \cref{tm:lg-princi
 \section{Preliminaries} \label{sec:prelim}
 Throughout this paper $R$ denotes an associative commutative ring with identity.
 All commutators are left-normed, i.\,e. $[x,\,y]=xyx\inv y\inv$. 
-We denote by $R^n$ the free $R$-module with a basis $e_1,\ldots,e_n$ and by $\Um(n,\,R)$ the subset of unimodular columns $v\in R^n$, i.\,e. 
+We denote by $R^n$ the free right $R$-module with a basis $e_1,\ldots,e_n$ and by $\Um(n,\,R)$ the subset of unimodular columns $v\in R^n$, i.\,e. 
 columns whose entries generate $R$ as an ideal.
 
 %Tulenbaev used {\it another presentation} for a relative Steinberg group to prove a local--global
@@ -312,25 +312,25 @@ In the definition of the semidirect product the group $\St(n, R/I)$ acts on $\St
 Tulenbaev constructs a pair of mutually inverse maps
 $$\xymatrix{ \St(n, R, I) \rtimes \St(n, R/I) \ar@<0.6ex>[r]^-\varphi &  \ar[l]^-\psi \St(n, R).}$$
 
-Define the map $\psi$ by $\psi(x_{ij}(\xi)) = (X(e_i, (\xi - \pi(\xi)e_j),\ x_{ij}(\pi(\xi)))$. 
+Define the map $\psi$ by $\psi(x_{ij}(\xi)) = (X(e_i, (\xi - e_j\pi(\xi)),\ x_{ij}(\pi(\xi)))$. 
 We have to check that $\psi$ preserves relations \eqref{add0}--\eqref{ccf2}.
 For example, let us check \eqref{ccf2}. 
 First of all, recall that in any semidirect product of groups one can compute the commutator of two elements in the following way:
 $$[(a, b), (c, d)] = (a \cdot {}^bc \cdot {}^{bdb^{-1}}a^{-1} \cdot {}^{[b, d]}c^{-1} , [b, d]).$$
 For $\xi\in R$ set $\xi' = \xi - \pi(\xi)$.
-Specializing $a = X(e_i, \xi' e_j)$, $b = x_{ij}(\pi(\xi))$, $c = X(e_j, \eta'e_k)$, $d = x_{jk}(\pi(\eta))$ and using the definition of the conjugation action 
+Specializing $a = X(e_i,  e_j\xi')$, $b = x_{ij}(\pi(\xi))$, $c = X(e_j, e_k\eta')$, $d = x_{jk}(\pi(\eta))$ and using the definition of the conjugation action 
 one computes the commutator $[\psi(x_{ij}(\xi), \psi(x_{jk}(\eta)]$ as follows:
 \setcounter{equation}{2}
-\begin{equation} \left(X(e_i, \xi' e_j) \cdot X(e_j + \pi(\xi)e_i, \eta'e_k) \cdot X(e_i, \pi(\eta)\xi' e_k - \xi' e_j) \cdot X(e_j, -\eta'e_k),\ x_{ik}(\pi(\xi\eta))\right). \label{eq:proofS3}\end{equation}
+\begin{equation} \left(X(e_i,  e_j\xi') \cdot X(e_j + e_i\pi(\xi), e_k\eta') \cdot X(e_i,  e_k\pi(\eta)\xi' -  e_j\xi') \cdot X(e_j, -e_k\eta'),\ x_{ik}(\pi(\xi\eta))\right). \label{eq:proofS3}\end{equation}
 \setcounter{lm}{3}
-After applying additivity relations \eqref{add2}, \eqref{add3} and moving the factor $X(e_i, -\xi' e_j)$ to the left hand side of the formula by means of relation \eqref{conj2}
+After applying additivity relations \eqref{add2}, \eqref{add3} and moving the factor $X(e_i, - e_j\xi')$ to the left hand side of the formula by means of relation \eqref{conj2}
 one gets the following expression:
-$$(X(e_j, \eta'e_k) \cdot X(e_i, (\xi' \eta' + \pi(\xi)\eta' + \pi(\eta)\xi')e_k \cdot X(e_j, -\eta'e_k),\ x_{ik}(\pi(\xi\eta)).$$
+$$\left(X(e_j, e_k\eta') \cdot X(e_i, e_k(\xi' \eta' + \pi(\xi)\eta' + \pi(\eta)\xi')) \cdot X(e_j, -e_k\eta'),\ x_{ik}(\pi(\xi\eta))\right).$$
 Since $\xi'\eta' + \pi(\xi)\eta' + \pi(\eta)\xi' = \xi\eta - \pi(\xi\eta)$ the above expression clearly simplifies to $\psi(x_{ik}(\xi\eta))$, as claimed.
 Verification of the fact that $\psi$ preserves relations \eqref{add0}, \eqref{ccf1} is similar to the above computation but is easier.
 In particular, one does not need to use relation~\eqref{add3}.
 
-It remains to check that the map $\varphi$ given by $\varphi\left((X(u, v), 1)\right) = X(u, v),$ $\varphi\left((1, x_{ij}(\xi))\right) = X(e_i, \sigma(\xi)e_j)$
+It remains to check that the map $\varphi$ given by $\varphi\left((X(u, v), 1)\right) = X(u, v),$ $\varphi\left((1, x_{ij}(\xi))\right) = X(e_i, e_j\sigma(\xi))$
 is well-defined and inverse to $\psi$.
 \end{proof}
 
@@ -379,7 +379,7 @@ The reason for this is the following lemma which asserts that the ``missing'' re
 \begin{lm}
 \label{allyouneedisf}
 Denote by $\phi\colon\St^*(n,\,R,\,I)\rightarrow\E(n,\,R)$ the natural map sending $F(u,\,v)\mapsto t(u,\,v)$ and $S(u,\,v)\mapsto t(u,\,v)$.
-Then the following facts are true.
+Then the following facts hold:
 \begin{enumerate}
 \item $\St^*(n,\,R,\,I)$ is generated as an abstract group by the set of elements 
       $$\{F(u,\,va)\mid a\in I,\ (u,\,v^t)=(Me_1,\,e_2^tM\inv),\,M\in\E(n,\,R)\};$$
@@ -399,7 +399,7 @@ Here we denote by $M^*$ the contragradient matrix, $M^*=(M\inv)^t$.
 By \eqref{add4} we have $$F(u,\,v)=\prod\limits_{k\neq1}F(Me_1,\,M^*e_k\tilde v_k)$$
 where $\tilde v_k$ stands for $k$-th coordinate of $\tilde v=\sum e_i\tilde v_i$.
 Applying relations \eqref{add5}, \eqref{coinc} we get
-$$S(u,\,v)=\prod\limits_{k\neq1}S(Ne_k\tilde u_k,\,N^*e_1)=\prod\limits_{k\neq1}F(Ne_k,\,N^*e_1\tilde u_k)$$
+$$S(u',\,v')=\prod\limits_{k\neq1}S(Ne_k\tilde u_k,\,N^*e_1)=\prod\limits_{k\neq1}F(Ne_k,\,N^*e_1\tilde u_k)$$
 and, thus, obtain $(\mathrm{a})$. Obviously, $(\mathrm{b})$ follows from $(\mathrm{a})$. 
 To prove $(\mathrm{c})$ it suffices to show that
 $$F(u,\,v)S(u',\,v')F(u,\,v)\inv=S(t(u,\,v)u',\,t(u,\,v)^*v').$$
@@ -431,8 +431,8 @@ First of all, recall that van der Kallen in~\cite[3.8--3.10]{vdK} constructs the
 $$x(u,\,v)\in\St(n,\,R),\ u^tv=0,\ u_i=0\,\text{ or }\,v_i=0\,\text{ for some }\,1\leq i\leq n.$$
 The following definition is the ``transpose'' of \cite[3.13]{vdK}.
 \begin{df} For $u\in R^n$, $v\in\E(n,\,R)e_1$, $u^tv=0$, consider the set $\overline Y(u,\,v)\subseteq\St(n,\,R)$
- consisiting of all elements $y\in\St(n,\,R)$ that admit a decomposition $y=\prod x(w^k,\,v)$, 
- where $\sum u^k=u$ and $u^k= (e_pv_q-e_qv_p)c^k$ for some $c^k\in R$, $1\leq p\neq q\leq n$. \end{df}
+ consisiting of all elements $y\in\St(n,\,R)$ that admit a decomposition $y=\prod x(u^k,\,v)$, 
+ where $\sum u^k=u$ and $u^k= (e_pv_q-e_qv_p)c_k$ for some $c_k\in R$, $1\leq p\neq q\leq n$. \end{df}
 
 Since columns of elementary matrices are unimodular, one can find $w\in R^t$ such that $w^tv=1$.
 It is not hard to check that \setcounter{equation}{6} \setcounter{lm}{7}
@@ -532,7 +532,7 @@ sending $y_{ij}(a)$ to $y^*_{ij}(a)$.
 Now we turn to the main result of this paper, namely, we construct for $n\geq 4$ the map $$T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X]),$$ that fits into the diagram \eqref{eq:diagram}.
 
 We will prove a somewhat more general result. Let $B$ be a commutative unital ring.
-We call an ideal $I$ of $B$ \emph{uniquely $r$-divisible} if for every $m\in I$ there exists only one $m'\in I$ such that $rm' = m$ (we denote such $m'$ by $\frac{m}{r}$).
+We call an ideal $I$ of $B$ \emph{uniquely $r$-divisible} if for every $m\in I$ there exists a unique $m'\in I$ such that $rm' = m$ (we denote such $m'$ by $\frac{m}{r}$).
 Clearly, $I$ is uniquely $r$-divisible if and only if the restriction of the morphism of principal localisation $\lambda_r\colon R \to R_r$ to $I$ is an isomorphism.
 
 \begin{tm} \label{a3map} Let $B$ be a ring, $a\in B$ and let $I$ be an ideal of $B$ that is uniquely $a$-divisible.
@@ -542,7 +542,7 @@ Then for $n\geq 4$ there exists a map $T\colon\St^*(n,\,B_a,\,I)\rightarrow\St(n
 
 For a vector $u\in R^n$ we denote by $I(u)$ the ideal generated by the entries of $u\in R^n$, i.\,e. $I(u)=\sum\limits_{k=1}^nu_kR$.
 To prove \cref{a3map} we follow the approach of Tulenbaev and construct yet another family of elements $X_{u,v}(a)\in \St(n,\,B)$, $a\in B$ which contains van der Kallen's generators $X(u, v)$ as a subfamily (i.\,e. $X_{u,v}(1) = X(u, v)$).
-The key feature of this definition is that the assumption $u \in\Um(n, B)$ is replaced with a weaker condition $a \in I(u)$ (this is equivalent to saying that $u$ becomes unimodular after localisation in $a$).
+The key feature of this definition is that the assumption $u \in\Um(n, B)$ is replaced with a weaker condition $a \in I(u)$ (this is equivalent to saying that $u$ becomes unimodular after localisation by the powers of $a$).
 %The idea is the following. Say $a$ is not a zero divisor, then $ua^m\in B$ for some $m$ and we will construct some element ``$X(ua^m,\,va^{-m})$''.
 %One can not garantee that $ua^m\in\E(n,\,B)e_1a^k$, however, the ideal generated by entries of $ua^m$ contains some power of $a$ .
 %More formally, we have the following definition.
@@ -553,6 +553,9 @@ The key feature of this definition is that the assumption $u \in\Um(n, B)$ is re
 For $u \in R^n$ we denote by $D(u)$ the set consisting of all $v\in B^n$ decomposing into a sum $v=\sum_{k=1}^Nv_k$ where $v_1,\ldots,v_N\in B^n$ are such that $u^tv_k=0$ and each $v_k$ has at least two zero coordinates.
 Now for $a\in I(u)$ and $v \in D(u)$ set $X_{u,v}(a) = \prod\limits_{k=1}^Nx(u,\,v_ka)$.
 \end{df}
+Notice that Tulenbaev uses different notation for van der Kallen elements, e.\,g. he writes $X_{u,v}$ instead of $X(u,\,v)$ and $X(u,\,v)$ instead of $x(u,\,v)$. 
+We stick to van der Kallen's notation.
+
 Tulenbaev shows that the factors $x(u,\,v_ka)$, $1\leq k\leq N$ commute, see~\cite[Lemma~1.1\,e)]{Tul}.
 He also shows that if $v$ admits another decomposition $v=\sum_{j=1}^Mv'_j$ satisfying the assumptions of \cref{df:TulX} then one has
 $\prod_{k=1}^Nx(u,\,v_ka)=\prod_{j=1}^Mx(u,\,v'_ja)$, see the discussion following \cite[Lemma~1.1]{Tul}.
@@ -563,8 +566,7 @@ From the canonical decomposition~\eqref{eq:canonical} it follows that $vb\in D(u
 In particular, if $I$ is uniquely $a$-divisible and $a^k\in I(u)$, then every $v\in I^n$ satisfying $v^tu=0$ is contained in $D(u)$.
 \end{rk}
 
-Notice that Tulenbaev uses different notation for van der Kallen elements, e.\,g. he writes $X_{u,v}$ instead of $X(u,\,v)$ and $X(u,\,v)$ instead of $x(u,\,v)$. 
-We stick to van der Kallen's notation.
+
 
 \begin{lm} \label{xproperties}
 For $u$, $w\in B^n$, $v, v' \in D(u)$ such that $u^tw=0$, for $a$, $b\in I(u)$, $c\in B$, $g\in\St(n,\,B)$ the following are true:
@@ -594,16 +596,17 @@ Set $u' = \phi(g)u$, since
 $\phi(g)^*u_{ij} = t_{kj}(-r) \cdot u_{ij} = e_iu_j - e_ju_i + e_kru_i =u'_{ij}+u'_{ki}r,$ 
 we obtain from~\cite[3.11]{vdK} that
 $$x(\phi(g)u,\,\phi(g)^* u_{ij} ac_{ij})=x\left(u',\,u'_{ij}c_{ij}a\right)\cdot x\left(u',\,u'_{ki} rc_{ij}a\right).$$
+Since $u_{ij} = - u_{ji}$, $c_{ij}= - c_{ji}$ the case $i=h$, $j\neq k$ formally follows from the previous one.
+
 Decomposing in this fashion each factor $g\,x(u,u_{ij}ac_{ij})g^{-1}$ for which $\phi(g)^*u_{ij}ac_{ij}$ does not have two zero coordinates, 
  we arrive at a product satisfying the requirements of the definition of $X_{\phi(g)u,\phi(g)^*wb}(a)$.
-
- Since $u_{ij} = - u_{ji}$, $c_{ij}= - c_{ji}$ the case $i=h$, $j\neq k$ formally follows from the one just considered. \end{proof}
+ \end{proof}
 
 We will also need the ``transposed'' analogue of Tulenbaev's elements $X_{u,v}(a)$.
 \begin{df} \label{df:TulY}
 Let $v\in B^n$, $a\in I(v)$, and $u \in D(v)$, i.\,e. $u = \sum\limits_{i=1}^M u_i$ for some $u_k$ having two zero components such that $v^tu_k=0$.
 Set $Y_{u,v}(a)=\prod_{k=1}^Mx(u_ka,\,v)$. 
-Similarly to \cref{df:TulX} this definition does not depend neither on the order of factors nor on the choice of decomposition for $u$.
+Similarly to \ref{df:TulX} one can check that this definition does not depend neither on the order of factors nor on the choice of decomposition for $u$.
 \end{df}
 
 One can repeat van der Kallen's and Tulenbaev's arguments and prove the following transposed version of Lemma~\ref{xproperties}.
@@ -621,7 +624,7 @@ For $u$, $u'$, $w$ and $v\in B^n$, such that $u$ and $u'$ have decomposition as 
 
 Finally, it remains to show that for a ``good'' pair $(u,\,v)$ the elements $X$ and $Y$ coincide.
 \begin{lm}\label{x=y}
-Let $u$, $v$, $x$, $y$ be elements of $B^n$ and $b,r\in B$ be such that $u^t v = 0$, $x^ty=b$, $x^tv=0$, $u^ty=0$ and $b\in I(u)\cap I(v)$.
+Let $u$, $v$, $x$, $y$ be elements of $B^n$ and $b\in I(u)\cap I(v)$, $r\in B$ be such that $u^t v = 0$, $x^ty=b$, $x^tv=0$, $u^ty=0$, $x^tu = 0$, $y^tv=0$.
 Then one has $X_{u,vb^4r}(b)=Y_{ub^4r,v}(b).$
 \end{lm}
 \begin{proof}
@@ -646,7 +649,7 @@ It remains to check for $u = Me_1$, $v=M^*e_2$ and $c\in I$ that
 \begin{equation}T(F(u, cv)) = X_{\tilde u,\,\tilde v c/a^{4m}}(a^{2m}) = Y_{\tilde uc/a^{4m},\, \tilde v}(a^{2m}) = T(S(uc, v)). \label{eq:last}\end{equation}
 Here $\tilde u, \tilde v \in B^n$ are liftings of $u$ and $v$ such that $\lambda_a(\tilde u)= ua^m$, $\lambda_a(\tilde v)= va^m$ and $\tilde u^t \tilde v = 0$.
 We can also assume that $m$ is so large that $a^{2m}\in I(\tilde{u})\cap I(\tilde{v})$ and there exist $\tilde{x}$, $\tilde{y}$ such that the following equations hold:
-$$\lambda_a(\tilde{x})=Me_3a^m,\ \lambda_a(\tilde{y})=M^*e_3a^m\text{ and }\tilde{x}^t\tilde{y}=a^{2m},\ \tilde{x}^t\tilde{v} = 0,\ \tilde{u}^t\tilde{y} =0.$$
+$$\lambda_a(\tilde{x})=Me_3a^m,\ \lambda_a(\tilde{y})=M^*e_3a^m\text{ and }\tilde{x}^t\tilde{y}=a^{2m},\ \tilde{x}^t\tilde{v} = 0,\ \tilde{u}^t\tilde{y} =0,\ \tilde{x}^t\tilde{u} = 0,\ \tilde{y}^t\tilde{v}=0.$$
 To obtain~\eqref{eq:last} it remains to apply \cref{x=y} taking $b=a^{2m}$, $r=c/a^{12m}$.
 Thus, the map $T$ is well-defined.
 
