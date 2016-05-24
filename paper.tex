@@ -104,15 +104,6 @@
 
 \maketitle
 
-%\begin{thebibliography}{99}
-%\bibitem{Lav2} A.~Lavrenov, A local--global principle for symplectic $\mathrm K_2$, {\it to appear}.
-%\bibitem{Rao} *Statement of Ravi Rao's hypothesis
-%\bibitem{Swa1} *Swan's relative Steinberg group 1
-%\bibitem{Swa2} *Swan's relative Steinberg group 2
-%\bibitem{Swa3} *Swan's relative Steinberg group 3
-%\bibitem{Tul0} *Tulenbaev's paper on almost commutative rings (cite somewhere)
-%\end{thebibliography}
-
 \section*{Introduction}
 The aim of this paper is to establish Quillen's local-global principle and the centrality of even orthogonal $\Kt$ for an arbitrary commutative ring $R$.
 
@@ -154,28 +145,12 @@ The paper is organised as follows.
 After introducing the preliminaries we explain in \cref{sec:patching} how the patching technique of~\cite{SCh} allows one to reduce \cref{tm:lg-principle} to the special case $\Phi=\rA_3$.
 Next, in \cref{sec:yap} we describe a new ``transpose-symmetric'' presentation for the relative linear Steinberg group.
 Finally, this presentation is used in~\cref{sec:lgp} to prove \cref{tm:lg-principle} in the case $\Phi=\rA_3$.
-%It mimics the standart vector representation of $\SL(n,\,R)$, therefore in the first section we use representations and corresponding vector notation. 
-%Finally, in \cref{sec:patching} we derive our principal results from this special case and the amalgamation theorem for relative Steinberg groups from~\cite{SCh}.
-%There we switch to the root notation.
 
 \section{Preliminaries} \label{sec:prelim}
 Throughout this paper $R$ denotes an associative commutative ring with identity.
 All commutators are left-normed, i.\,e. $[x,\,y]=xyx\inv y\inv$. 
 We denote by $R^n$ the free right $R$-module with a basis $e_1,\ldots,e_n$ and by $\Um(n,\,R)$ the subset of unimodular columns $v\in R^n$, i.\,e. 
 columns whose components generate $R$ as an ideal.
-
-%Tulenbaev used {\it another presentation} for a relative Steinberg group to prove a local--global
-%principle for a linear Steinberg group~\cite{Tul}. 
-%This relative another presentation was inspired by the {\it absolute} one of van der Kallen~\cite{vdK}. 
-%However, Tulenbaev's presentation can only be used for $\St(l+1,\,R)=\St(\mathrm A_l,\,R)$, $l\geq4$.
-
-%Tulenbaev's result can be applied to the subsystems of type $\mathrm A_4$ inside $\mathrm E_l$ and ``glued'' 
-% to get a local--global principle for Steinberg groups of type $\mathrm E_l$~\cite{SCh}. 
-%To use this glueing method for groups of type $\mathrm D_l$ as well one has to work with subsystems 
-%of type $\mathrm A_3$ instead, and thus extend Tulenbaev's result to the case of $\mathrm A_3$.
-
-%Recently, the local--global principle was obtained for Steinberg groups of type $\mathrm C_l$ starting from rank 3~\cite{Lav2}. 
-%That is another motivation to consider the linear Steinberg group in rank 3.
 
 First of all, recall that for a simply laced root system $\Phi$ of rank $\geq 2$ the Steinberg group $\St(\Phi, R)$ 
 is defined by generators $x_\alpha(r)$, $\alpha\in\Phi$, $r\in R$ and the following relations:
@@ -210,7 +185,6 @@ $$\{X(u,\,v)\mid u\in\Um(n,\,R),\ v\in R^n,\ u^tv=0\}$$ and relations:
 &X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'). \label{conj1}
 \end{align}
 This presentation clearly implies that $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)$ is a central extension.
-%Our notation for the generators of $\St(n, R)$ differs from van der Kallen's, e.\,g.
 Notice that we parametrize elements $X(u, v)$ by two columns rather than by a column and a row as it is done in~\cite{vdK}.
 Our generator $X(u,v)$ corresponds to van der Kallen's generator $X(u, v^t)$.
 
@@ -275,27 +249,9 @@ On the other hand, constructing $T_\Psi$ for $\Psi=\rA_3$ is not at all obvious 
 
 Summing up the above discussion, we have shown that both \cref{tm:centrality} and \cref{tm:lg-principle} follow from Tulenbaev's lifting property in the special case $\Phi=\rA_3$.
 
-%This $T$ is an inverse to a map induced by localisation, so that constructing $\mathrm T$ may be treated
-%as a proof of excision property for Steinberg group in this very particular situation.
-
-%To prove the local--global principle for Steinberg groups of type $\mathrm D_l$ and centrality 
-%of $\mathrm K_2(\mathrm D_l,\,R)$ we need such a map for $n=4$ (i.e., for the group of type $\mathrm A_3$).
-
-
-%Since there are known counterexamples to centrality of $\Kt$ and, thus, to \cref{tm:lg-principle} for $\Phi$ of rank $2$ (see~\cite{W}), 
-%this gives a complete answer to the question for which $\ell$ the local-global principle holds for $\Kt(\rC_\ell, R)$.
-
-%The main idea of our proof of~\cref{tm:lg-principle} is to first settle the case $\Phi=\rA_3$ and then derive the other cases from it using the patching technique of~\cite{SCh}.
-
-%Compare \cref{tm:lg-principle} with the local-global principle for $\Ko$ which states that an element of the congruence subgroup $g\in \GG(\Phi,\,R[X], XR[X])$ is elementary
-%(i.\,e. lies in $\E(\Phi, R[X])$) if and only if $\lambda_M^*(g)=1\in\E(\Phi,\,R_M[X])$ for all maximal ideals $M \trianglelefteq R$.
-
-
 \section{Yet another presentation for the relative Steinberg group.} \label{sec:yap}
 
 In order to construct the arrow $T$ Tulenbaev uses the following presentation for the relative Steinberg group, see~\cite[Proposition~1.6]{Tul}. 
-%Assume that $I\trianglelefteq R$ such that a short exact sequence
-%\renewcommand{\theequation}{$\dagger$}
 \setcounter{lm}{1}
 \begin{prop}\label{prop:TulPres}
 For a splitting ideal $I$ and $n\geq 4$ the group $\St(n,\,R,\,I)$ is isomorphic to the group defined by generators
@@ -349,7 +305,6 @@ Both ``another presentation'' of van der Kallen and that of Tulenbaev are given 
  where the first one is ``nice'' in some sense i.\,e. unimodular, a column of an elementary matrix or the like, while the second one is arbitrary.
 It is easy to formulate the additivity property in the second argument for these generators, cf.~\eqref{add1}, \eqref{add2},
 while it is not so easy when it comes to the additivity in the first argument, cf. \eqref{add3}.
-%Such presentations allowed them to formulate easily an additivity by the second argument, but one has to write something similar to T3 instead of additivity by the first one.
 
 The construction of the homomorphism $T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X])$
 amounts to choosing certain elements in the group $\St(n,\,R\ltimes XR_a[X])$ and proving that these elements satisfy relations \eqref{add2}--\eqref{add3}, see~\cite[Lemmas~1.2 and~1.3\,c)]{Tul}.
@@ -467,70 +422,9 @@ Thus, we have demonstrated the following result.
 
 \begin{prop} \label{lm:map-iota}
  For a splitting ideal $I \trianglelefteq R$ and $n\geq 4$ the groups $\St^*(n,\,R,\,I)$ and $\St(n,\,R, I)$ are isomorphic.
-% there exists a well-defined homomorphism $$\iota\colon\St^*(n,\,R,\,I)\rightarrow\St(n,\,R, I) \subseteq \St(n, R)$$ 
-% satisfying the equalities $\iota (F(u,\,v)) = X(u,\,v)$ and $\iota (S(u,\,v)) = Y(u,\,v)$. 
 \end{prop}
-%\begin{proof}
-%We already know that $\iota$ is well-defined. It suffices to check that the image of $\iota$ is contained in $\St(n,\,R,I)$.
-%Denote the canonical projection $R\epi R/I$ by $\rho$.
-%Clearly, the induced group morphism $\rho^*\colon\St(n,\,R)\rightarrow\St(n,\,R/I)$ sends $X(u,\,v)$ to $X(\rho(u),\,\rho(v))$ and $Y(u,\,v)$ to $Y(\rho(u),\,\rho(v))$. 
-%Observe that $\E(n,\,R)\epi\E(n,\,R/I)$ is surjective, therefore for $x\in\E(n,\,R)e_1$ one has $\rho(x)\in\E(n,\,R/I)e_1$. 
-%, as required. \end{proof}
  
-\begin{comment}
-We constructed $\iota$ for an arbitrary $I\trianglelefteq R$. For $I$ a splitting ideal we construct an inverse homomorphism
-$$
-\kappa\colon\St(n,\,R,\,I)\rightarrow\St^*(n,\,R,\,I).
-$$
-With this end we recall a presentation of $\St(n,\,R,\,I)$ as a group with action of $\St(n,\,R)$. For a splitting ideal such a presentation was firstly obtained by Swan~\cite{Swa1,Swa2,Swa3}, and for an arbitrary $I$ by Keune~\cite{Keu} and Loday~\cite{Lod}.
-
-For a group $G$ acting on a group $H$ from the left denote by $\!\,^gh$ the image of $h\in H$ under homomorphism corresponding by $g\in G$.
-
-Let $I\trianglelefteq R$ be a splitting ideal then $\St(n,\,R,\,I)$ can be presented as a group with action of $\St(n,\,R)$ with the set of (relative) generators
-$$
-\{y_{ij}(a)\mid a\in I,\ 1\leq i\neq j\leq n\}
-$$
-subject to relations
-\setcounter{equation}{0}
-\renewcommand{\theequation}{KL\arabic{equation}}
-\begin{align}
-&y_{ij}(a)y_{ij}(b)=y_{ij}(a+b),\\
-&\!\,^{x_{ij}(r)}y_{hk}(b)=y_{hk}(b),\text{ for }h\neq j,\ k\neq i,\\
-&\!\,^{x_{ij}(r)}y_{jk}(b)\cdot y_{jk}(-b)=y_{ik}(rb),\\
-&y_{ij}(a)\cdot\,^{x_{jk}(s)}y_{ij}(-a)=y_{ik}(as),\\
-&\!\,^{x_{hk}(a)}\big(\!\,^gy_{ij}(b)\big)=y_{hk}(a)\cdot\,^gy_{ij}(b)\cdot y_{hk}(-a)\,\text{ for }a\in I,\ g\in\St(n,\,R).
-\end{align}
-
-In other words, $\St(n,\,R,\,I)$ is isomorphic to a quotient group of a free group $F$ on the set of generators 
-$$\St(n,\,R)\times\{y_{ij}(a)\mid a\in I,\ 1\leq i\neq j\leq n\}$$
-(the natural action of $\St(n,\,R)$ on $F$ is given by $\!\,^f(g,\,y)=(fg,\,y)$) modulo the normal equivariant subgroup generated by KL1--KL5 (where $y_{ij}(a)$ stands for $(1,\,y_{ij}(a))$. Keune in Loday consider only stable Steinberg group $\St(R)=\varinjlim\St(n,\,R)$. This presentation for unstable group firstly appeared in~\cite{SCh} in the context of Chevalley groups. Observe that the definition of the relative Steinberg group in~\cite[Def.~3.3]{SCh} differs from ours but remark after this definition and~\cite[Lem.~8]{SCh} immediantly imply that for a splitting ideal $I\trianglelefteq R$ it coincides with the one given in the present paper. The existance of the presentation is proven in~\cite[Prop.~6]{SCh}. Relation~5 in~\cite[Prop.~6]{SCh} joins relations KL3 and KL4, and relations~2 and 3 follow from KL4 and KL5 with the use of KL6.
-
-One could probably wonder why Tulenbaev needs his own presentation for $\St(n,\,R,\,I)$ and does not use the one of Keune--Loday. The reason is the following. To construct a map from Keune--Loday group one should firstly define an action of the absolute Steinberg group on the target group, in our context, the action of $\St(n,\,B_a)$ on $\St(n,\,B,\,I)$, what is probably possible, but seems to be much harder, then giving another presentation (in particular, one should define $\!\,^{x_{ij}(r/a^m)}y_{ji}(c)$).
-
-Now, to construct
-$
-\kappa\colon\St(n,\,R,\,I)\rightarrow\St^*(n,\,R,\,I)
-$
-we need to define an action of $\St(n,\,R)$ on $\St^*(n,\,R,\,I)$ and find elements $y^*_{ij}(a)\in\St^*(n,\,R,\,I)$ subject to KL1--KL5. To define a action of the absolute group we use van der Kallen's another presentaion for it. For $u\in\Um(n,\,R)$, $v\in R^n$, $u^tv=0$ define
-$
-\alpha(u,\,v)\colon\St^*(n,\,R,\,I)\rightarrow\St^*(n,\,R,\,I)
-$
-by $\alpha(u,\,v)\big(F(u',\,v')\big)=F(t(u,\,v)u',\,t(u,\,v)^*v')$, and $\alpha(u,\,v)\big(S(u',\,v')\big)=S(t(u,\,v)u',\,t(u,\,v)^*v')$. Obviously, the images of the generators satisfy R1--R4, so that $\alpha(u,\,v)$ is a well-defined automorphism. Also, $\alpha$'s themselves clearly satisfy K1--K2, thus $X(u,\,v)\mapsto\alpha(u,\,v)$ is a well-defined action of $\St(n,\,R)$ on $\St^*(n,\,R,\,I)$.
-
-Next, define $y_{ij}^*(a)=F(e_i,\,e_ja)$, $a\in I$. These elements obviously satisfy KL1, KL2 and KL5. Check KL3:
-\begin{multline*}
-\!\,^{x_{ij}(r)}y^*_{jk}(b)=F(t_{ij}(r)e_j,\,t_{ji}(-r)e_kb)=F(e_ir+e_j,\,e_kb)=\\
-=S(e_irb+e_jb,\,e_k)=S(e_irb,\,e_k)S(e_jb,\,e_k)=F(e_i,\,e_krb)F(e_j,\,e_kb).
-\end{multline*} 
-KL4 is similar. Finally, we have a well-defined map
-$$
-\kappa\colon\St(n,\,R,\,I)\rightarrow\St^*(n,\,R,\,I)
-$$
-sending $y_{ij}(a)$ to $y^*_{ij}(a)$. 
-\end{comment}
-
 \section{The local-global principle for \texorpdfstring{$\Kt$}{K2}}\label{sec:lgp}
-%At this point we have demonstrated for $n\geq4$ and a splitting ideal $I$ that $\St^*(n,\,R,\,I)$ and $\St(n,\,R,\,I)$ are isomorphic.
 Now we turn to the main result of this paper, namely, for $n\geq 4$ we construct the map $$T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X]),$$ that fits into the diagram \eqref{eq:diagram}.
 
 We will prove a somewhat more general result. Let $B$ be a commutative unital ring.
@@ -546,10 +440,6 @@ Then for $n\geq 4$ there exists a map $T\colon\St^*(n,\,B_a,\,I)\rightarrow\St(n
 For a vector $u\in R^n$ we denote by $I(u)$ the ideal generated by the components of $u\in R^n$, i.\,e. $I(u)=\sum\limits_{k=1}^nu_kR$.
 To prove \cref{a3map} we follow the approach of Tulenbaev and construct yet another family of elements $X_{u,v}(a)\in \St(n,\,B)$, $a\in B$ which contains van der Kallen's generators $X(u, v)$ as a subfamily, i.\,e. $X_{u,v}(1) = X(u, v)$.
 The key feature of this definition is that the assumption $u \in\Um(n, B)$ is replaced by a weaker condition $a \in I(u)$ equivalent to imposing that $u$ becomes unimodular after localisation by the powers of $a$.
-%The idea is the following. Say $a$ is not a zero divisor, then $ua^m\in B$ for some $m$ and we will construct some element ``$X(ua^m,\,va^{-m})$''.
-%One can not garantee that $ua^m\in\E(n,\,B)e_1a^k$, however, the ideal generated by entries of $ua^m$ contains some power of $a$ .
-%More formally, we have the following definition.
-%Then, we need generators parametrised by pairs $(u,\,v)$ with $u^tv=0$, $v\in I$, $a^m\in\mathrm I(u)$ for some $m\in\mathbb N$. Such generators are defined in~\cite{Tul}.
 
 \setcounter{df}{1}
 \begin{df} \label{df:TulX}
