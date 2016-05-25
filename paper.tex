@@ -192,6 +192,7 @@ Recall that an ideal $I\trianglelefteq R$ is called a \emph{splitting ideal} if 
 $$\xymatrix{0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0}$$
 For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(\Phi, R, I)$ can be defined as the kernel $\Ker\big(\St(\Phi,\,R)\epi\St(\Phi,\,R/I)\big)$.
 Applying the functor $\St(\Phi, -)$ to $\pi$ and $\sigma$ we get that $\St(\Phi, R) = \St(\Phi, R, I) \rtimes \St(\Phi, R/I)$.
+Here the group $\St(\Phi, R/I)$ acts on $\St(\Phi, R, I)$ by conjugation via the splitting map, i.\,e. $(g, h) (g',h') = (g {}^{\sigma^*(h)}g', hh')$.
 
 In the case of an arbitrary $I$ the relative Steinberg group $\St(\Phi, R, I)$ does not have to be a subgroup of $\St(\Phi, R)$ and should be defined as a central extension of the above kernel.
 For the purposes of the present text it suffices to consider only relative Steinberg groups corresponding to splitting ideals.
@@ -250,11 +251,10 @@ If in the latter statement one replaces $\rA_3$'s with $\rA_4$'s then such a che
 It is easy to see that the argument of Lemma~14 works verbatim in our situation (one only has to replace all references to Lemma~3 in its proof with references to Lemma~2).
 On the other hand, the probem of existence of $T_\Psi$ for $\Psi$ of type $\rA_3$ is not easy and will be solved in the following sections of the paper.
 
-Summing up the above discussion, we have shown that both \cref{tm:centrality} and \cref{tm:lg-principle} follow from Tulenbaev's lifting property in the special case $\Phi=\rA_3$.
+Summing up the above discussion, we have shown that both \cref{tm:centrality} and \cref{tm:lg-principle} follow from the special case $\Phi=\rA_3$ of Tulenbaev's lifting property.
 
 \section{Yet another presentation for the relative Steinberg group.} \label{sec:yap}
-
-In order to construct the arrow $T$ Tulenbaev uses the following presentation for the relative Steinberg group, see~\cite[Proposition~1.6]{Tul}. 
+In order to construct the arrow $T$ Tulenbaev uses a variant of ``another presentation'' for the relative Steinberg group, cf.~\cite[Proposition~1.6]{Tul}. 
 \setcounter{lm}{1}
 \begin{prop}\label{prop:TulPres}
 For a splitting ideal $I$ and $n\geq 4$ the group $\St(n,\,R,\,I)$ is isomorphic to the group defined by generators
@@ -266,16 +266,19 @@ $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ and the following set 
 &X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'), \label{conj2}  \\
 &X(ur+w,\,v)=X(u,\,vr)X(w,\,v)\,\text{ for }r\in R,\ (u,\,w)\in\Um_{n\times2}(R) \label{add3}.
 \end{align}
-Moreover, the group $\St(n, R)$ decomposes into the semidirect product $\St(n,\,R, I)\rtimes \St(n,\,R/I)$.
+Moreover, one can replace the last family of relations in the definition of $\St(n, R, I)$ with the following smaller family:
+\setcounter{equation}{2} \renewcommand{\theequation}{T\arabic{equation}'}
+\begin{equation} X(e_ir+e_j,\,e_k)=X(e_i,\,rae_k)X(e_j,\,ae_k)\,\text{ for }r\in R,\ a\in I\text{ and } i,j,k\text{ distinct}. \label{add3'} \end{equation} 
 \end{prop}
-Here, $\Um_{n\times2}(R)$ denotes the set of $n\times2$ \emph{unimodular matrices}, i.\,e. matrices $M$ such that there exists a $2\times n$ matrix $N$ satisfying $NM=\begin{pmatrix}1&0\\0&1\end{pmatrix}$.
-In the definition of the semidirect product the group $\St(n, R/I)$ acts on $\St(n, R, I)$ by conjugation via the splitting map, i.\,e. ${}^g X(u,\,v) = X(\phi(\sigma(g))u, \phi(\sigma(g))^*v)$ for $g \in \St(n, R/I)$.
+In the statement of the third relation we denote by $\Um_{n\times2}(R)$ the set of $n\times2$ \emph{unimodular matrices},
+i.\,e. matrices $M$ such that there exists a $2\times n$ matrix $N$ satisfying $NM=\left(\begin{smallmatrix}1&0\\0&1\end{smallmatrix}\right)$.
 
-\begin{proof} For the sake of completeness we present below a more detailed version of Tulenbaev's proof.
-Tulenbaev constructs a pair of mutually inverse maps
+\begin{proof} 
+Since the statement of our proposition contains one more claim which is not contained in~\cite[Proposition~1.6]{Tul}, we reproduce below a more detailed version of the original proof of Tulenbaev.
+The idea is to construct a pair of mutually inverse maps (as before, $\St(n, R/I)$ acts on $\St(n,R,I)$ by conjugation):
 $$\xymatrix{ \St(n, R, I) \rtimes \St(n, R/I) \ar@<0.6ex>[r]^-\varphi &  \ar[l]^-\psi \St(n, R).}$$
 
-Define the map $\psi$ by $\psi(x_{ij}(\xi)) = (X(e_i, (\xi - e_j\pi(\xi)),\ x_{ij}(\pi(\xi)))$. 
+We define the map $\psi$ by $\psi(x_{ij}(\xi)) = (X(e_i, (\xi - e_j\pi(\xi)),\ x_{ij}(\pi(\xi)))$. 
 We have to check that $\psi$ preserves relations \eqref{add0}--\eqref{ccf2}.
 For example, let us check \eqref{ccf2}. 
 First of all, recall that in any semidirect product of groups one can compute the commutator of two elements in the following way:
@@ -286,23 +289,17 @@ one computes the commutator $[\psi(x_{ij}(\xi), \psi(x_{jk}(\eta)]$ as follows:
 \setcounter{equation}{2}
 \begin{equation} \left(X(e_i,  e_j\xi') \cdot X(e_j + e_i\pi(\xi), e_k\eta') \cdot X(e_i,  e_k\pi(\eta)\xi' -  e_j\xi') \cdot X(e_j, -e_k\eta'),\ x_{ik}(\pi(\xi\eta))\right). \label{eq:proofS3}\end{equation}
 \setcounter{lm}{3}
-After applying additivity relations \eqref{add2}, \eqref{add3} and moving the factor $X(e_i, - e_j\xi')$ to the left hand side of the formula by means of relation \eqref{conj2}
+After applying additivity relations \eqref{add2}, \eqref{add3'} and moving the factor $X(e_i, - e_j\xi')$ to the left hand side of the formula by means of relation \eqref{conj2}
 one gets the following expression:
 $$\left(X(e_j, e_k\eta') \cdot X(e_i, e_k(\xi' \eta' + \pi(\xi)\eta' + \pi(\eta)\xi')) \cdot X(e_j, -e_k\eta'),\ x_{ik}(\pi(\xi\eta))\right).$$
 Since $\xi'\eta' + \pi(\xi)\eta' + \pi(\eta)\xi' = \xi\eta - \pi(\xi\eta),$ the above expression simplifies to $\psi(x_{ik}(\xi\eta))$, as claimed.
 Verification of the fact that $\psi$ preserves relations \eqref{add0}, \eqref{ccf1} is similar to the above computation but is easier.
-In particular, one does not need to use relation~\eqref{add3}.
+In particular, one does not need to use the relation~\eqref{add3'}.
 
-It remains to check that the map $\varphi$ given by $\varphi\left((X(u, v), 1)\right) = X(u, v),$ $\varphi\left((1, x_{ij}(\xi))\right) = X(e_i, e_j\sigma(\xi))$
-is well-defined and inverse to $\psi$.
+Now define the map $\varphi$ by $\varphi\left((X(u, v), 1)\right) = X(u, v),$ $u\in E(n, R)e_1$, $v\in I^n$, $\varphi\left((1, x_{ij}(\xi))\right) = X(e_i, e_j\sigma(\xi))$.
+It is clear that $\varphi$ preserves the relations \eqref{add2}--\eqref{conj2}. The relation~\eqref{add3} follows from~\eqref{add1}--\ref{conj1}, see~\cite[(1.3)]{Tul}, thus, the map $\varphi$ is well-defined.
+it is easy to check that $\varphi\psi=1$ therefore $\psi$ is injective. To see that $\psi$ is surjective it remains to notice that the elements $(X(u,v), 1)$, $u\in \E(n, R)e_1$, $v\in I^n$ lie in the image of $\psi$.
 \end{proof}
-
-\begin{rk} \label{rk:T123'} Notice that from the proof of the above proposition it follows that one could replace the family of relations \eqref{add3}
-in the definition of $\St(n, R, I)$ with the following smaller family:
-\setcounter{equation}{2} \renewcommand{\theequation}{T\arabic{equation}'}
-\begin{equation} X(e_ir+e_j,\,e_k)=X(e_i,\,rae_k)X(e_j,\,ae_k)\,\text{ for }r\in R,\ a\in I\text{ and } i,j,k\text{ distinct}. \label{add3'} \end{equation} 
-This follows from the fact that only this smaller family of relations was actually used in the construction of the map $\psi$
-(more precisely, it was used to simplify the second factor of~\eqref{eq:proofS3}). \end{rk}
 
 Both ``another presentation'' of van der Kallen and that of Tulenbaev are given in terms of generators parametrised by pairs of vectors,
  where the first one is ``nice'' in some sense i.\,e. unimodular, a column of an elementary matrix or the like, while the second one is arbitrary.
@@ -311,8 +308,8 @@ while it is not so easy when it comes to the additivity in the first argument, c
 
 The construction of the homomorphism $T\colon\St(n,\,R_a[X],\,XR_a[X])\rightarrow\St(n,\,R\ltimes XR_a[X])$
 amounts to choosing certain elements in the group $\St(n,\,R\ltimes XR_a[X])$ and proving that these elements satisfy relations \eqref{add2}--\eqref{add3}, see~\cite[Lemmas~1.2 and~1.3\,c)]{Tul}.
-The main problem with this recipe is that the assumption $n\geq5$ is essential to check that the relation~\eqref{add3} holds.
-It is not possible to choose arbitrary orthogonal vectors $u$, $v$ as parameters for the generators, since in this situation it is not even known that $t(u,\,v)\in\E(n,\,R)$.
+The main problem with this recipe is that the assumption $n\geq5$ is essential for the verification of the fact that relations~\eqref{add3} (or even~\eqref{add3'}) hold.
+%It is not possible to choose arbitrary orthogonal vectors $u$, $v$ as parameters for the generators, since in this situation it is not even known that $t(u,\,v)\in\E(n,\,R)$.
 
 To generalise Tulenbaev's results to $n=4$ we use a more symmetric presentation with two types of generators: 
 $F(u,\,v)$ with $u$ nice and $v$ arbitrary and $S(u,\,v)$ with $u$ arbitrary and $v$ nice.
@@ -378,7 +375,7 @@ With this end, we construct two mutually inverse homomorphisms
 $$\xymatrix{\St^*(n,\,R,\,I)\ar@<0.5ex>[r]^{\iota}&\St(n,\,R,\,I)\ar@<0.5ex>[l]^{\kappa}.}$$
 In order to construct the arrow $\kappa$ we use the presentation from \cref{prop:TulPres}.
 We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
-In view of \cref{rk:T123'} it suffices to check that $F(u,v)$ satisfy the relations \eqref{add2}, \eqref{conj2}, \eqref{add3'}.
+It suffices to check that $F(u,v)$ satisfy the relations \eqref{add2}, \eqref{conj2}, \eqref{add3'}.
 The validity of relations \eqref{add2}, \eqref{conj2} is obvious, while \eqref{add3'} follows from \eqref{add5} and \eqref{coinc}. Indeed,
 $$ F(e_i, rae_k) F(e_j, ae_k) = S(rae_i, e_k) S(ae_j, e_k) = S(a(re_i+e_j), e_k) = F(e_ir+e_j, ae_k). \qedhere $$
 
@@ -441,7 +438,7 @@ Then for $n\geq 4$ there exists a map $T\colon\St^*(n,\,B_a,\,I)\rightarrow\St(n
                             \St^*(n,\,B_a,\,I)\ar@<-0.0ex>[rr]_{\iota}\ar@{-->}[rru]_{T}            && \St(n,\,B_a)} \label{eq:a3diag} \end{equation} \end{tm}
 
 For a vector $u\in R^n$ we denote by $I(u)$ the ideal generated by the components of $u\in R^n$, i.\,e. $I(u)=\sum\limits_{k=1}^nu_kR$.
-To prove \cref{a3map} we follow the approach of Tulenbaev and construct yet another family of elements $X_{u,v}(a)\in \St(n,\,B)$, $a\in B$ which contains van der Kallen's generators $X(u, v)$ as a subfamily, i.\,e. $X_{u,v}(1) = X(u, v)$.
+To prove \cref{a3map} we follow the approach of Tulenbaev and construct certain family of elements $X_{u,v}(a)\in \St(n,\,B)$, $a\in B$ which contains van der Kallen's generators $X(u, v)$ as a subfamily, i.\,e. $X_{u,v}(1) = X(u, v)$.
 The key feature of this definition is that the assumption $u \in\Um(n, B)$ is replaced by a weaker condition $a \in I(u)$ equivalent to imposing that $u$ becomes unimodular after localisation by the powers of $a$.
 
 \setcounter{df}{1}
