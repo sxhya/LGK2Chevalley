@@ -191,6 +191,7 @@ Our generator $X(u,v)$ corresponds to van der Kallen's generator $X(u, v^t)$.
 Recall that an ideal $I\trianglelefteq R$ is called a \emph{splitting ideal} if the canonical projection $R \twoheadrightarrow R/I$ splits as a unital ring morphism, i.\,e. one has $\pi\sigma=1$:
 $$\xymatrix{0\ar@<0.1ex>[r]^{}&I\ar@<0.1ex>[r]^{}&R\ar@<0.5ex>[r]^{\pi}&R/I\ar@<0.5ex>[l]^{\sigma}\ar@<0.1ex>[r]^{}&0}$$
 For a splitting ideal $I\trianglelefteq R$ the \emph{relative Steinberg group} $\St(\Phi, R, I)$ can be defined as the kernel $\Ker\big(\St(\Phi,\,R)\epi\St(\Phi,\,R/I)\big)$.
+Applying the functor $\St(\Phi, -)$ to $\pi$ and $\sigma$ we get that $\St(\Phi, R) = \St(\Phi, R, I) \rtimes \St(\Phi, R/I)$.
 
 In the case of an arbitrary $I$ the relative Steinberg group $\St(\Phi, R, I)$ does not have to be a subgroup of $\St(\Phi, R)$ and should be defined as a central extension of the above kernel.
 For the purposes of the present text it suffices to consider only relative Steinberg groups corresponding to splitting ideals.
@@ -204,12 +205,15 @@ We say that the Steinberg group functor $\St(\Phi, -)$ satisfies {\it Tulenbaev 
 there exists a map $T_\Phi$ which fits into the following commutative diagram.
 \numberwithin{equation}{section}
 \setcounter{equation}{1}
-\begin{equation} \xymatrix{\St(\Phi,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d]_-{\lambda_a^*} & \St(\Phi, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
+\begin{equation} \xymatrix{\St(\Phi,\,R\ltimes XR_a[X],\,XR_a[X]) \ar@{^{(}->}[r] \ar[d] & \St(\Phi, R \ltimes XR_a[X]) \ar[d]_-{\lambda_a^*} \\
                            \St(\Phi,\,R_a[X],\,XR_a[X]) \ar@{-->}[ru]_-{T_\Phi} \ar@{^{(}->}[r] & \St(\Phi, R_a[X])} \label{eq:diagram} \end{equation}
-Here, $R\ltimes XR_a[X]$ denotes the semidirect product of the ring $R$ and the $R$-algebra $XR_a[X]$ (see~e.\,g.~\cite[Definition~3.2]{SCh}), $\lambda_a^*$ is the morphism of Steinberg groups induced by the morphism $\lambda_a\colon R \to R_a$ of localisation by the powers of $a$.                           
+Here, $R\ltimes XR_a[X]$ denotes the semidirect product of the ring $R$ and the $R$-algebra $XR_a[X]$ 
+(see~e.\,g.~\cite[Definition~3.2]{SCh}), $\lambda_a^*$ is the morphism of Steinberg groups induced by the morphism $\lambda_a\colon R \to R_a$ of localisation by the powers of $a$ and 
+the left arrow is the restriction of $\lambda_a^*$ to the first factor in the decomposition $\St(\Phi, R \ltimes XR_a[X]) \cong \St(\Phi, R\ltimes XR_a[X], XR_a[X]) \rtimes \St(\Phi, R)$.
 Notice that $XR_a[X]$ is a splitting ideal for both $R_a[X]$ and $R \ltimes XR_a[X]$.
 \end{df}
-It is clear that the image of $T_\Phi$ is contained in the image of the top arrow, therefore, Tulenbaev lifting property implies that the relative Steinberg groups in the left-hand side of the diagram are isomoprhic.
+In fact, one can show that Tulenbaev lifting property implies that the relative Steinberg groups in the left-hand side of the diagram are isomorphic.
+To see this, notice that the commutativity of the top (resp. bottom) triangle implies that left arrow is injective (resp. surjective).
 
 We claim that the main results of this paper follow from Tulenbaev's lifting property.
 \begin{prop} For any irreducible $\Phi$ of rank $\geq 2$ there are implications $a) \implies b) \implies c) \implies d)$.
