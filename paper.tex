@@ -16,9 +16,6 @@
 \DeclareFieldFormat{postnote}{#1}
 \addbibresource{paper.bib}
             
-\newlist{thmlist}{enumerate}{1} \setlist[thmlist]{label=(\roman{thmlisti}), ref=\thethm.(\roman{thmlisti}),noitemsep} \Crefname{thmlisti}{Theorem}{Theorems}
-\newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label=(\roman{lemlisti}), ref=\thelemma.(\roman{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
-
 \theoremstyle{plain} \declaretheorem[name=Theorem, Refname={Theorem,Theorems}]{tm} \Crefname{tm}{Theorem}{Theorems}
 \numberwithin{equation}{section}
 
@@ -30,10 +27,6 @@
 \theoremstyle{definition} \newtheorem{df}[lm]{Definition} \Crefname{df}{Definition}{Definitions}
 \newtheorem{example}[lm]{Example} \Crefname{example}{Example}{Examples}
 \theoremstyle{remark} \newtheorem{rk}[lm]{Remark} \Crefname{rk}{Remark}{Remarks}
-\newtheorem*{mtm}{Main Theorem}
-\newtheorem*{atm}{Another Presentation}
-\newlist{lmlist}{enumerate}{1} \setlist[lmlist]{label={\rm(\roman{lmlisti})}, ref=\thelm.(\roman{lmlisti}),noitemsep} \Crefname{lmlisti}{Lemma}{Lemmas}
-
 
 %Page layout
 \textwidth 16cm 
@@ -76,14 +69,6 @@
 \newcommand{\rE}{\mathsf{E}}
 \newcommand{\rF}{\mathsf{F}}
 \newcommand{\rG}{\mathsf{G}}
-\DeclareRobustCommand{\VAN}[2]{#1}
-\newcommand{\catname}[1]{{\normalfont\textbf{#1}}}
-
-\renewcommand{\labelenumi}{\theenumi{\rm)}}
-\renewcommand{\theenumi}{\alph{enumi}}
-
-\newcommand\restr[2]{{\left.\kern-\nulldelimiterspace #1 \vphantom{\big|}\right|_{#2}}}
-\newcommand*\MapsTo{\xrightarrow[\raisebox{0.25 em}{\smash{\ensuremath{\sim}}}]{}}  
 
 \title{On centrality of even orthogonal $\Kt$}
 \keywords {Steinberg groups, $K_2$-functor. {\em Mathematical Subject Classification (2010):} 19C09}
