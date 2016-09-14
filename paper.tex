@@ -182,9 +182,12 @@ $$\{X(u,\,v)\mid u\in\Um(n,\,R),\ v\in R^n,\ u^tv=0\}$$ and relations:
 \setcounter{equation}{0} \renewcommand{\theequation}{K\arabic{equation}}
 \begin{align}
 &X(u,\,v)X(u,\,w)=X(u,\,v+w), \label{add1} \\
-&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(v,\,u)\inv v'). \label{conj1}
+&X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(u,\,v)^* v'). \label{conj1}
 \end{align}
-This presentation clearly implies that $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)$ is a central extension.
+In the above formula $t(v,\,u)^*$ denotes the corresponding contragradient matrix, i.\,e. $t(v,\,u)^* = t(v,\,u)\inv = t(v,\,-u)$.
+We employ the same notation for contragradient matrices below, i.\,e. for $M\in\E(n,R)$ we set $M^* = (M^t)\inv$.
+
+The above presentation clearly implies that $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)$ is a central extension.
 Notice that we parametrize elements $X(u, v)$ by two columns rather than by a column and a row as it is done in~\cite{vdK}.
 Our generator $X(u,v)$ corresponds to van der Kallen's generator $X(u, v^t)$.
 
@@ -228,7 +231,7 @@ We claim that the main results of this paper follow from Tulenbaev's lifting pro
 \begin{proof} The specified implications are contained in the proofs of Lemma~15, Theorem~2 and Theorem~1 of \cite{SCh}, respectively. \end{proof}
      
 In order to construct the arrow $T_\Phi$ fitting in the diagram~\eqref{eq:diagram} one needs to have some direct description of the relative Steinberg group $\St(\Phi, R, I)$.
-For example, in~\cite{Tul} Tulenbaev uses a variant of of W.~van~der~Kallen's ``another presentation'' for this purpose. The details of this approach are outlined in the next section.
+For example, in~\cite{Tul} Tulenbaev uses a variant of W.~van~der~Kallen's ``another presentation'' for this purpose. The details of this approach are outlined in the next section.
 On the other hand, in~\cite{SCh} the second-named author obtained a theorem which asserts that the relative Steinberg group $\St(\Phi, R, I)$ can be presented as an amalgamated product of
 several copies of relative Steinberg groups of smaller rank. 
 
@@ -268,10 +271,11 @@ $$\{X(u,\,v)\mid u\in\E(n,\,R)e_1,\ v\in I^n,\ u^tv=0\}$$ and the following set 
 \end{align}
 Moreover, one can replace the last family of relations in the definition of $\St(n, R, I)$ with the following smaller family:
 \setcounter{equation}{2} \renewcommand{\theequation}{T\arabic{equation}'}
-\begin{equation} X(e_ir+e_j,\,e_k)=X(e_i,\,rae_k)X(e_j,\,ae_k)\,\text{ for }r\in R,\ a\in I\text{ and } i,j,k\text{ distinct}. \label{add3'} \end{equation} 
+\begin{equation} X(Me_1r+Me_2,\,M^*e_3a)=X(Me_1,\,M^*e_3ar)X(Me_2,\,M^*e_3a)\, \label{add3'} \end{equation} 
+for $r\in R$, $a\in I$ and $M\in E(n, R)$.
 \end{prop}
 In the statement of the third relation we denote by $\Um_{n\times2}(R)$ the set of $n\times2$ \emph{unimodular matrices},
-i.\,e. matrices $M$ such that there exists a $2\times n$ matrix $N$ satisfying $NM=\left(\begin{smallmatrix}1&0\\0&1\end{smallmatrix}\right)$.
+i.\,e. matrices $m$ such that there exists a $2\times n$ matrix $m'$ satisfying $m'm=\left(\begin{smallmatrix}1&0\\0&1\end{smallmatrix}\right)$.
 
 \begin{proof} 
 Since the statement of our proposition contains one more claim which is not contained in~\cite[Proposition~1.6]{Tul}, we reproduce below a more detailed version of the original proof of Tulenbaev.
@@ -353,7 +357,7 @@ Then the following holds:
 
 \begin{proof}
 Let $F(u,\,v)$ be an arbitrary generator of the first type and let $M\in\E(n,\,R)$ be such that $F(u,\,v)=F(Me_1,\,M^*\tilde v)$. 
-Here we denote by $M^*$ the contragradient matrix, $M^*=(M\inv)^t$. 
+%As before, we denote by $M^*$ the contragradient matrix, $M^*=(M\inv)^t$.
 By \eqref{add4} we have $$F(u,\,v)=\prod\limits_{k\neq1}F(Me_1,\,M^*e_k\tilde v_k)$$
 where $\tilde v_k$ stands for the $k$-th coordinate of $\tilde v=\sum e_i\tilde v_i$.
 Applying relations \eqref{add5}, \eqref{coinc} we get
@@ -377,8 +381,8 @@ In order to construct the arrow $\kappa$ we use the presentation from \cref{prop
 We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
 It suffices to check that $F(u,v)$ satisfy the relations \eqref{add2}, \eqref{conj2}, \eqref{add3'}.
 The validity of relations \eqref{add2}, \eqref{conj2} is obvious, while \eqref{add3'} follows from \eqref{add5} and \eqref{coinc}. Indeed,
-$$ F(e_i, rae_k) F(e_j, ae_k) = S(rae_i, e_k) S(ae_j, e_k) = S(a(re_i+e_j), e_k) = F(e_ir+e_j, ae_k). \qedhere $$
-
+\begin{multline} F(me_1, m^*e_3ar) F(me_2, m^*e_3a) = S(me_1ar, m^*e_3) S(me_2a, m^*e_3) = \\ = S(m(e_1r+e_2)a, m^*e_3) = F(me_1r+me_2, m^*e_3a). \qedhere \end{multline}
+%TODO: Why the last equality holds? This seems plausible but I'd like to have some precise phrase.
 As for the map $\iota$, we first define it as a homomorphism to the absolute group. % which does not rely on the assumption that $I$ is splitting.
 Then we prove that the image of $\iota$ is contained in $\St(n, R, I)$.
 %$$\xymatrix{\St^*(n,\,R,\,I)\ar@<0.0ex>[r]^{\iota}&\St(n,\,R).}$$
