@@ -265,9 +265,9 @@ i.\,e. matrices $m$ such that there exists a $2\times n$ matrix $m'$ satisfying 
 
 \begin{proof} 
 Since the statement of our proposition contains one more claim which is not contained in~\cite[Proposition~1.6]{Tul}, we reproduce below a more detailed version of the original proof of Tulenbaev.
-The idea is to construct a pair of mutually inverse maps (as before, $\St(n, R/I)$ acts on $\St(n,R,I)$ by conjugation):
-$$\xymatrix{ \St(n, R, I) \rtimes \St(n, R/I) \ar@<0.6ex>[r]^-\varphi &  \ar[l]^-\psi \St(n, R).}$$
-
+For a time being denote by $G$ the group defined by T1, T2, T3'. We write $\pi(\xi)$ for the image of $\xi\in R$ in the quotient ring and assume that $R/I$ is embedded into $R$. The idea is to construct a pair of mutually inverse maps:
+$$\xymatrix{G\rtimes \St(n, R/I) \ar@<0.6ex>[r]^-\varphi &  \ar[l]^-\psi \St(n, R)}$$
+where $\St(n, R/I)$ acts on $G$ via $$\,^{X(u,\,v)}X(u',v')=X(t(u,\,v)u',\,t(u,\,v)^*v').$$
 We define the map $\psi$ by $\psi(x_{ij}(\xi)) = (X(e_i, (\xi - e_j\pi(\xi)),\ x_{ij}(\pi(\xi)))$. 
 We have to check that $\psi$ preserves relations \eqref{add0}--\eqref{ccf2}.
 For example, let us check \eqref{ccf2}. 
@@ -367,7 +367,7 @@ In order to construct the arrow $\kappa$ we use the presentation from \cref{prop
 We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
 It suffices to check that $F(u,v)$ satisfy the relations \eqref{add2}, \eqref{conj2}, \eqref{add3'}.
 The validity of relations \eqref{add2}, \eqref{conj2} is obvious, while \eqref{add3'} follows from \eqref{add5} and \eqref{coinc}. Indeed,
-\begin{multline} F(me_1, m^*e_3ar) F(me_2, m^*e_3a) = S(me_1ar, m^*e_3) S(me_2a, m^*e_3) = \\ = S(m(e_1r+e_2)a, m^*e_3) = F(me_1r+me_2, m^*e_3a). \qedhere \end{multline}
+\begin{multline} F(Me_1, M^*e_3ar) F(Me_2, M^*e_3a) = S(Me_1ar, M^*e_3) S(Me_2a, M^*e_3) = \\ = S(M(e_1r+e_2)a, M^*e_3) = F(Me_1r+Me_2, M^*e_3a). \qedhere \end{multline}
 %TODO: Why the last equality holds? This seems plausible but I'd like to have some precise phrase.
 As for the map $\iota$, we first define it as a homomorphism to the absolute group. % which does not rely on the assumption that $I$ is splitting.
 Then we prove that the image of $\iota$ is contained in $\St(n, R, I)$.
@@ -539,4 +539,3 @@ Commutativity of the diagram~\eqref{eq:a3diag} follows directly from the definit
 \printbibliography
 
 \end{document}
-
