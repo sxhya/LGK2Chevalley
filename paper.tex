@@ -1,17 +1,17 @@
 \documentclass[11pt]{amsart}
 \usepackage{amscd, amsmath, amssymb, amsthm, amsfonts, amstext, verbatim, enumitem, mathtools, xfrac, microtype, nameref, thmtools, hyperref, cleveref}
 \usepackage[utf8]{inputenc}
-\usepackage[backend=bibtex, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
+\usepackage[backend=bibtex, citestyle=numeric-comp, natbib=true, sortlocale=en_US, url=true, doi=true, eprint=true, maxbibnames=4]{biblatex}            
 \usepackage[english]{babel} 
 \usepackage{stmaryrd}
 \usepackage[matrix,arrow,curve]{xy}
 
 %Bibliography
-\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
-\DeclareFieldFormat[article, inproceedings, inbook, thesis]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
-\DeclareFieldFormat{postnote}{#1}
+%\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+%\newbibmacro{string+doi}[1]{\iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+%\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+%\DeclareFieldFormat[article, inproceedings, inbook, thesis]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+%\DeclareFieldFormat{postnote}{#1}
 \addbibresource{paper.bib}
             
 \theoremstyle{plain} \declaretheorem[name=Theorem, Refname={Theorem,Theorems}]{tm} \Crefname{tm}{Theorem}{Theorems}
@@ -143,7 +143,7 @@ is defined by generators $x_\alpha(r)$, $\alpha\in\Phi$, $r\in R$ and the follow
 \begin{align}
  x_\alpha(r) x_\alpha(s) & = x_\alpha(r+s), & \nonumber \\
  [x_\alpha(r),  x_\beta(s)] & = x_{\alpha+\beta}(N_{\alpha,\beta}\cdot rs), &\ \alpha,\beta\in \Phi,\ \alpha+\beta\in\Phi, \nonumber \\
- [x_\alpha(r),  x_\beta(s)] & = 1, &\ \alpha,\beta\in \Phi,\ \alpha, \beta \not \in \Phi \cup \{0\}. \nonumber
+ [x_\alpha(r),  x_\beta(s)] & = 1, &\ \alpha,\beta\in \Phi,\ \alpha+\beta \not \in \Phi \cup \{0\}. \nonumber
 \end{align}
 Here $N_{\alpha,\beta}$ are the structure constants of $\Phi$ which are equal to $\pm 1$.
 We use a more familiar notation for root unipotents in the case $\Phi=\rA_\ell$:
@@ -170,7 +170,7 @@ $$\{X(u,\,v)\mid u\in\Um(n,\,R),\ v\in R^n,\ u^tv=0\}$$ and relations:
 &X(u,\,v)X(u,\,w)=X(u,\,v+w), \label{add1} \\
 &X(u,\,v)X(u',\,v')X(u,\,v)\inv=X(t(u,\,v)u',\,t(u,\,v)^* v'). \label{conj1}
 \end{align}
-In the above formula $t(v,\,u)^*$ denotes the corresponding contragradient matrix, i.\,e. $t(u,\,v)^* = t(v,\,u)\inv = t(v,\,-u)$.
+In the above formula $t(u,\,v)^*$ denotes the corresponding contragradient matrix, i.\,e. $t(u,\,v)^* = t(v,\,u)\inv = t(v,\,-u)$.
 We employ the same notation for contragradient matrices below, i.\,e. for $M\in\E(n,R)$ we set $M^* = (M^t)\inv$.
 
 The above presentation clearly implies that $\phi\colon\St(n,\,R)\rightarrow\E(n,\,R)$ is a central extension.
@@ -363,7 +363,7 @@ Finally, $(\mathrm{d})$ follows from $(\mathrm{c})$.
 Our next goal is to show that for a splitting ideal $I\trianglelefteq R$ the group $\St^*(n,\,R,\,I)$ is isomorphic to $\St(n,\,R,\,I)=\Ker\big(\St(n,\,R)\epi\St(n,\,R/I)\big)$.
 With this end, we construct two mutually inverse homomorphisms
 $$\xymatrix{\St^*(n,\,R,\,I)\ar@<0.5ex>[r]^{\iota}&\St(n,\,R,\,I)\ar@<0.5ex>[l]^{\kappa}.}$$
-In order to construct the arrow $\kappa$ we use the presentation from \cref{prop:TulPres}.
+In order to construct the arrow $\kappa$ we use the presentation from Proposition~\ref{prop:TulPres}.
 We set $$\kappa(X(u,v)) = F(u,v),\ u\in \E(n, R)e_1,\ v\in I^n.$$ 
 It suffices to check that $F(u,v)$ satisfy the relations \eqref{add2}, \eqref{conj2}, \eqref{add3'}.
 The validity of relations \eqref{add2}, \eqref{conj2} is obvious, while \eqref{add3'} follows from \eqref{add5} and \eqref{coinc}. Indeed,
@@ -440,7 +440,7 @@ Notice that Tulenbaev uses different notation for van der Kallen elements, e.\,g
 We stick to van der Kallen's notation.
 
 Tulenbaev shows that the factors $x(u,\,v_ka)$, $1\leq k\leq N$, commute, see~\cite[Lemma~1.1\,e)]{Tul}.
-He also shows that if $v$ admits another decomposition $v=\sum_{j=1}^Mv'_j$ satisfying the assumptions of \cref{df:TulX} then one has
+He also shows that if $v$ admits another decomposition $v=\sum_{j=1}^Mv'_j$ satisfying the assumptions of Definition~\ref{df:TulX} then one has
 $\prod_{k=1}^Nx(u,\,v_ka)=\prod_{j=1}^Mx(u,\,v'_ja)$, see the discussion following \cite[Lemma~1.1]{Tul}.
 Thus, the elements $X_{u,v}(a)$ are well-defined. Obviously, $\phi(X_{u,v}(a))=t(u,\,va)$.
 
@@ -504,7 +504,7 @@ For $u$, $u'$, $w$ and $v\in B^n$, such that $u$ and $u'$ have decomposition as 
 \end{lm}
 
 Finally, it remains to show that for a ``nice'' pair $(u,\,v)$ the elements $X$ and $Y$ coincide.
-\begin{lm}\label{x=y}
+\begin{lm}\label{xeqy}
 Let $u$, $v$, $x$, $y$ be elements of $B^n$ and $b\in I(u)\cap I(v)$, $r\in B$ be such that $u^t v = 0$, $x^ty=b$, $x^tv=0$, $u^ty=0$, $x^tu = 0$, $y^tv=0$.
 Then one has $X_{u,vb^4r}(b)=Y_{ub^4r,v}(b).$
 \end{lm}
@@ -522,7 +522,7 @@ Set $w=M^*e_1$. Since $w^tu=1$ there exist vectors $\tilde w$, $\tilde u\in B^n$
 $$ \lambda_a(\tilde{w})=wa^m,\ \lambda_a(\tilde{u})=ua^m\text{ and moreover }\tilde u^tv=0\text{ and }\tilde w^t\tilde u=a^{2m}.$$
 It is clear that $a^{2m}\in I(\tilde u)$, moreover by~\cref{rk:ID} we have $v/a^{3m} \in D(\tilde u)$, therefore we can set $T(F(u,\,v))=X_{\tilde u,v/a^{3m}}(a^{2m})$. 
 
-The first two assertions of \cref{xproperties} guarantee that this definition does not depend on the choice of $m$ and the liftings $\tilde u$ and $\tilde w$.
+The first two assertions of Lemma~\ref{xproperties} guarantee that this definition does not depend on the choice of $m$ and the liftings $\tilde u$ and $\tilde w$.
 Similarly, we can define $T(S(u,\,v))=Y_{u/a^{3m},\tilde v}(a^{2m})$.
 In view of Lemmas~\ref{xproperties}~and~\ref{yproperties} the map $T$ preserves relations \eqref{add4}--\eqref{conj3}.
 
@@ -531,7 +531,7 @@ It remains to check that for $u = Me_1$, $v=M^*e_2$ and $c\in I$ one has
 Here $\tilde u, \tilde v \in B^n$ are liftings of $u$ and $v$ such that $\lambda_a(\tilde u)= ua^m$, $\lambda_a(\tilde v)= va^m$ and $\tilde u^t \tilde v = 0$.
 We can also assume that $m$ is large enough to ensure that $a^{2m}\in I(\tilde{u})\cap I(\tilde{v})$ and there exist $\tilde{x}$, $\tilde{y}$ such that the following equations hold:
 $$\lambda_a(\tilde{x})=Me_3a^m,\ \lambda_a(\tilde{y})=M^*e_3a^m\text{ and }\tilde{x}^t\tilde{y}=a^{2m},\ \tilde{x}^t\tilde{v} = 0,\ \tilde{u}^t\tilde{y} =0,\ \tilde{x}^t\tilde{u} = 0,\ \tilde{y}^t\tilde{v}=0.$$
-To obtain~\eqref{eq:last} it remains to apply \cref{x=y} (with $b=a^{2m}$, $r=c/a^{12m}$).
+To obtain~\eqref{eq:last} it remains to apply Lemma~\ref{xeqy} (with $b=a^{2m}$, $r=c/a^{12m}$).
 Thus, the map $T$ is well-defined.
 
 Commutativity of the diagram~\eqref{eq:a3diag} follows directly from the definitions of elements $X(u,\,v)$, $Y(u,\,v)$ and $X_{u,v}(a)$, $Y_{u,v}(a)$. \end{proof}
